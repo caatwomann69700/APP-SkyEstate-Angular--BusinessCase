@@ -1,0 +1,47 @@
+<div class="login-container">
+  <h2>Connexion</h2>
+
+  <!-- Message d'erreur en cas d'échec -->
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+  <!-- Alerte après trop d'échecs -->
+  <div *ngIf="isLocked" class="alert alert-danger">
+    Trop de tentatives échouées. Réessayez dans 30 secondes.
+  </div>
+
+  <form (ngSubmit)="onLogin()" class="login-form">
+    <!-- Champ Email -->
+    <label for="email">Email :</label>
+    <input 
+      id="email" 
+      type="email" 
+      [(ngModel)]="credentials.email" 
+      name="email" 
+      autocomplete="username" 
+      required
+      [disabled]="isLocked"
+    />
+
+    <!-- Champ Mot de passe -->
+    <label for="password">Mot de passe :</label>
+    <input 
+      id="password" 
+      type="password" 
+      [(ngModel)]="credentials.password" 
+      name="password" 
+      autocomplete="current-password" 
+      required
+      [disabled]="isLocked"
+    />
+
+    <!-- Message de sécurité pour le mot de passe -->
+    <small class="error-text">
+      Le mot de passe est obligatoire et doit comporter au minimum 6 caractères.
+    </small>
+
+    <!-- Bouton de soumission -->
+    <div style="text-align: right;">
+      <button type="submit" [disabled]="isLocked">Se Connecter</button>
+    </div>
+  </form>
+</div>

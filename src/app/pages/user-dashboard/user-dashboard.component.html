@@ -1,0 +1,28 @@
+<p>user-dashboard works!</p>
+<p>user-dashboard works!</p>
+<p>user-dashboard works!</p>
+<p>user-dashboard works!</p>
+<h3>Modifier vos coordonnées</h3>
+
+<p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+<p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+<form *ngIf="user" #userForm="ngForm" (ngSubmit)="onUpdate(userForm)">
+  
+  <label for="firstname">Prénom :</label>
+  <input id="firstname" type="text" [(ngModel)]="user.firstname" name="firstname" required />
+  
+  <label for="lastname">Nom :</label>
+  <input id="lastname" type="text" [(ngModel)]="user.lastname" name="lastname" required />
+  
+  <label for="email">Email :</label>
+  <input id="email" type="email" [(ngModel)]="user.email" name="email" required readonly />
+
+  <label for="phone">Téléphone :</label>
+  <input id="phone" type="text" [(ngModel)]="user.phone" name="phone" />
+
+  <label for="address">Adresse :</label>
+  <input id="address" type="text" [(ngModel)]="user.address" name="address" />
+
+  <button type="submit">Enregistrer</button>
+</form>

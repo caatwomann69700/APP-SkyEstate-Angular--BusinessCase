@@ -1,0 +1,169 @@
+/* Corps de base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Icône d'accessibilité */
+.accessibility-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2076c5;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accessibility-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Panneau d'accessibilité */
+.accessibility-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 70px;
+  width: 500px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  font-family: 'Roboto', sans-serif;
+  animation: slide-up 0.4s ease-out;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accessibility-panel h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2076c5;
+  font-size: 22px;
+  text-align: left;
+}
+
+/* Boutons dans le panneau */
+.accessibility-panel button {
+  margin: 10px 0;
+  padding: 12px;
+  width: 100%;
+  background: linear-gradient(90deg, #2076c5, #005faf);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.accessibility-panel button:hover {
+  background: linear-gradient(90deg, #005faf, #2076c5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.accessibility-panel button:focus {
+  outline: 2px solid #2076c5;
+}
+
+/* Mode sombre */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode a {
+  color: #bb86fc;
+}
+
+body.dark-mode button {
+  background: linear-gradient(90deg, #bb86fc, #8947c2);
+}
+
+body.dark-mode button:hover {
+  background: linear-gradient(90deg, #8947c2, #bb86fc);
+}
+
+/* Transition fluide */
+body,
+body.dark-mode {
+  transition: background-color 0.4s ease, color 0.4s ease, font-size 0.3s ease;
+}
+
+/* Media Queries pour la responsivité */
+
+/* Pour les écrans larges */
+@media (max-width: 1200px) {
+  .accessibility-panel {
+    width: 400px; /* Réduit la largeur du panneau sur les grands écrans */
+    bottom: 80px; /* Ajuste la position du panneau */
+    right: 50px;  /* Déplace légèrement le panneau */
+  }
+
+  .accessibility-icon {
+    bottom: 20px;  /* Position fixe, mais plus centrée sur l'écran */
+    right: 20px;
+    font-size: 22px; /* Légèrement plus petit */
+    padding: 12px;
+  }
+}
+
+/* Pour les tablettes et écrans plus petits */
+@media (max-width: 768px) {
+  .accessibility-panel {
+    width: 350px; /* Réduit encore la largeur du panneau */
+    bottom: 70px;
+    right: 20px;
+  }
+
+  .accessibility-icon {
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    padding: 12px;
+  }
+}
+
+/* Pour les petits écrans mobiles */
+@media (max-width: 480px) {
+  .accessibility-panel {
+    width: 90%; /* Utilise presque toute la largeur */
+    bottom: 60px;
+    right: 10px;
+    padding: 15px; /* Réduit le padding du panneau */
+  }
+
+  .accessibility-icon {
+    bottom: 10px; /* Positionne l'icône plus près du bas de l'écran */
+    right: 10px;
+    font-size: 18px; /* Réduit la taille de l'icône */
+    padding: 10px;
+  }
+
+  .accessibility-panel button {
+    font-size: 14px; /* Réduit la taille des boutons pour les petits écrans */
+    padding: 10px;
+  }
+}

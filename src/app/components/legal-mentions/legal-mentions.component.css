@@ -1,0 +1,43 @@
+/* Corps de base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.legal-mentions {
+    background-color: #f8f9fa; /* Fond gris clair */
+    color: #000000; /* Texte noir */
+    padding: 2rem 0;
+  }
+  
+  .legal-mentions h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #2076C5; /* Bleu principal */
+  }
+  
+  .legal-mentions p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .legal-mentions ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  
+  .legal-mentions a {
+    color: #2076C5; /* Liens en bleu */
+    text-decoration: none;
+  }
+  
+  .legal-mentions a:hover {
+    text-decoration: underline;
+  }
+  

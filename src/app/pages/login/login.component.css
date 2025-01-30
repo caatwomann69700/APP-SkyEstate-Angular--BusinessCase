@@ -1,0 +1,48 @@
+/* Style du formulaire */
+/* Ajuste la marge pour correspondre à la hauteur de la navbar */
+
+.login-form {
+    max-width: 400px;
+    margin: 100px auto 0; /* Centre horizontalement et ajoute un espace au-dessus pour qu'il soit sous la navbar */
+    padding: 30px; /* Ajoute plus d'espace interne */
+    margin-top: 215px;
+    border-radius: none;
+    margin-bottom: 95px; /* Ajoute un espace de 50px sous le formulaire */
+    background-color: #f8f9fa; /* Fond clair */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet moderne */
+  }
+  
+  /* Labels du formulaire */
+  .login-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Champs de saisie */
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Supprime la bordure arrondie */
+    border-radius: 0; /* Pas de coins arrondis */
+  }
+  
+  /* Bouton de connexion */
+  .login-form button {
+    background-color: #2076C5; /* Bleu */
+    color: white; /* Texte blanc */
+    font-weight: bold;
+    padding: 10px;
+    
+    border: none; /* Supprime les bordures */
+    border-radius: 0; /* Pas de coins arrondis */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition pour effet hover */
+  }
+  
+  /* Effet hover sur le bouton */
+  .login-form button:hover {
+    background-color: #0056b3; /* Bleu foncé */
+  }
+  

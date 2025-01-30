@@ -1,0 +1,266 @@
+/* Corps de base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #f8f9fa; /* Gris très clair */
+    padding: 90px 0px 0px 0px;
+    
+  }
+  
+  /* Bouton bleu sans coins arrondis */
+  .btn-blue {
+    background-color: #2076C5; /* Couleur personnalisable */
+    color: #ffffff; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 0; /* Suppression des coins arrondis */
+    padding: 0.6rem 1.2rem; /* Ajustement de la taille du bouton */
+    font-size: 1rem; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    line-height: 1.5; /* Alignement du texte */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s ease; /* Effet hover */
+  }
+  
+  #dynamic-city {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  #dynamic-city.fade-out {
+    opacity: 0;
+  }
+  
+  .btn-blue:hover {
+    background-color: #0056b3; /* Couleur plus foncée */
+  }
+  
+  .text-purple {
+    color: #2076C5;
+  }
+  .hero-image {
+    padding-left: 40px; /* Ajustez cette valeur pour décaler l'image */
+  }
+  
+  /* Section Hero */
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+  
+  .hero-text {
+    font-size: 2.6rem;
+    font-weight: bold;
+  }
+  
+  .hero-p {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  
+  .custom-image {
+    width: 530px;
+    height: 530px;
+    border-radius: 270px 270px 0 0;
+    border: 15px solid #ffffff;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-image {
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+    }
+  }
+  
+  /* Barre de recherche */
+  .search-box .row.g-0 > [class*='col-'] {
+    padding-left: 0; /* Supprime l'espacement à gauche */
+    padding-right: 0; /* Supprime l'espacement à droite */
+  }
+  
+  /* Champ Ville */
+  .ville-field {
+    background-color: #2076C5; /* Bleu très clair */
+    color: #ffffff; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 0; /* Supprime les coins arrondis pour un alignement parfait */
+    padding: 0.8rem; /* Espacement interne */
+  }
+  
+  .ville-field::placeholder {
+    color: #ffffff; /* Texte de l'espace réservé (placeholder) blanc */
+  }
+  
+  .arrivee-field,
+  .depart-field {
+    background-color: #d3d3d3; /* Gris foncé */
+    color: #000000; /* Texte noir */
+    border: none;
+    border-radius: 0; /* Supprime les coins arrondis */
+    padding: 0.8rem;
+  }
+  
+  .arrivee-field::placeholder,
+  .depart-field::placeholder {
+    color: #000000; /* Texte de l'espace réservé noir */
+  }
+  
+  /* Carré Blanc */
+  .white-box {
+    background-color: #ffffff; /* Fond blanc */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    padding: 1.5rem; /* Espacement interne */
+    margin-top: 1rem; /* Espacement au-dessus du carré blanc */
+  }
+  
+  /* Carré Gris */
+  .grey-box {
+    background-color: rgba(230, 232, 232, 0.65); /* Gris */
+    padding: 1rem;
+    width: 45%; /* Largeur ajustable */
+    text-align: center;
+  }
+  
+  .separator {
+    width: 1px;
+    height: 100%;
+    background-color: #000000; /* Noir */
+  }
+  
+  /* Bouton Chercher */
+  .btn-custom {
+    background-color: #2076C5; /* Couleur personnalisable */
+    color: #ffffff; /* Texte blanc */
+    border: none;
+    padding: 0.8rem 2rem; /* Ajuste l'espacement */
+    font-size: 1rem; /* Taille du texte */
+    font-weight: bold;
+    transition: all 0.3s ease-in-out; /* Transition pour hover */
+  }
+  
+  .btn-custom:hover {
+    background-color: #2076C5; /* Couleur plus foncée au survol */
+  }
+  
+  /* Responsivité */
+  @media (max-width: 768px) {
+    .grey-box {
+      width: 100%; /* Largeur totale sur mobile */
+      margin-bottom: 1rem; /* Espacement entre les boîtes */
+    }
+  
+    .separator {
+      display: none; /* Supprime le séparateur sur mobile */
+    }
+  }
+  
+  /* Style pour la case "Relations par jour" */
+  .stat-relations {
+    background-color: rgba(230, 232, 232, 0.65); /* Jaune clair */
+    color: #333; /* Texte sombre pour contraste */
+    padding: 1.5rem;
+    width: 230px;
+    height: 120px;
+    margin-left: -120px;
+  }
+  
+  /* Style pour la case "1 location/10 minutes" */
+  .stat-locations {
+    background-color: rgba(32, 118, 197, 0.2); /* Vert clair */
+    color: #fff; /* Texte blanc pour contraste */
+    padding: 1.5rem;
+    width: 230px;
+    height: 120px;
+    margin-left: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style pour la case "Utilisateurs" */
+  .stat-users {
+    background-color:white; /* Violet clair */
+    color: #fff; /* Texte blanc pour contraste */
+    padding: 1.5rem;
+    width: 230px;
+    height: 120px;
+    
+  }
+  
+  /* Valeurs spécifiques */
+  .stat-relations .stat-value,
+  .stat-locations .stat-value,
+  .stat-users .stat-value {
+    font-size: 1.6rem;
+    font-weight: bold;
+    
+  }
+  
+  .stat-relations .stat-label,
+  .stat-locations .stat-label,
+  .stat-users .stat-label {
+    font-size: rem;
+    margin-top: 0.5rem;
+   
+   
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2076C5;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 2rem 1rem;
+    }
+  
+    .hero-text {
+      font-size: 1.8rem;
+    }
+  
+    .hero-p {
+      font-size: 0.9rem;
+    }
+  
+    .custom-image {
+      width: 100%;
+      height: auto;
+    }
+  
+  /* Responsivité */
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 2rem 1rem;
+    }
+  
+    .hero-text {
+      font-size: 1.8rem;
+    }
+  
+    .hero-p {
+      font-size: 0.9rem;
+    }
+  
+    .custom-image {
+      width: 100%;
+      height: auto;
+      
+    }
+  
+    /* Masquer la section des statistiques */
+    .stats-section {
+      display: none; /* Cache complètement la section */
+    }
+  }
+  }
+  

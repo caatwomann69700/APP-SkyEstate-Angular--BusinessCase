@@ -1,0 +1,136 @@
+/* Container de discussion */
+/* Corps de base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+* {
+  font-family: Arial, sans-serif;
+}
+.chat-container {
+  margin: 0 auto 50px auto; /* Centre horizontalement et ajoute une marge en bas */
+  
+  padding: 20px; /* Optionnel : espace interne du container */
+}
+
+.discussion-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow-y: auto;
+    max-height: 600px; /* Augmente la hauteur maximale */
+    position: relative;
+    margin-bottom: 50px;
+    
+    
+  }
+  
+  /* Messages */
+  .message {
+    margin-bottom: 15px; /* Augmente l'espacement entre les messages */
+    display: flex;
+    justify-content: flex-start;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.2s ease, transform 0.5s ease;
+  }
+  
+  .message.left {
+    margin-left: 100px; /* Ajoute une marge à gauche */
+    margin-right: 20px; /* Optionnel : espace entre le bord droit et le message */
+    margin-top: 10px; /* Ajoute un petit espace en haut */
+    margin-bottom: 10px; /* Espace en bas */
+  }
+  
+  .message.right {
+    
+    margin-right: 20px; /* Ajoute une marge à droite */
+    margin-left: 700px; /* Optionnel : espace entre le bord gauche et le message */
+    margin-top: 10px; /* Ajoute un petit espace en haut */
+    margin-bottom: 10px; /* Espace en bas */
+  }
+  
+  /* Contenu des messages */
+  .message-content {
+    max-width: 70%; /* Augmente la largeur maximale */
+    padding: 15px 20px; /* Augmente le padding pour agrandir les bulles */
+    /* border-radius: 20px;  */
+    font-size: 1.2rem; /* Augmente la taille du texte */
+    border: 2px solid #ccc;
+    background-color: #e9e9e9;
+    position: relative;
+  }
+  
+ /* Messages à gauche */
+.message.left .message-content {
+  background-color: #2075c550;
+  margin-left: 20px; /* Ajoute une marge à gauche */
+  margin-right: 50px; /* Optionnel : espace entre le bord droit et le message */
+  margin-top: 10px; /* Ajoute un petit espace en haut */
+  margin-bottom: 10px; /* Espace en bas */
+}
+
+/* Messages à droite */
+.message.right .message-content {
+  background-color: #f4f5f581;
+  margin-right: 20px; /* Ajoute une marge à droite */
+  margin-left: 90px; /* Optionnel : espace entre le bord gauche et le message */
+  margin-top: 10px; /* Ajoute un petit espace en haut */
+  margin-bottom: 10px; /* Espace en bas */
+}
+  
+  /* Triangle des bulles */
+  .message-content::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  
+  .message.left .message-content::before {
+    
+    border-color: transparent #d1ffd1 transparent transparent;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .message.right .message-content::before {
+    
+    border-color: transparent transparent transparent #d1eaff;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Messages responsifs */
+@media (max-width: 768px) {
+  .message.left {
+    margin-left: 10px; /* Réduction de la marge à gauche */
+    margin-right: 10px; /* Réduction de la marge à droite */
+  }
+
+  .message.right {
+    margin-left: 10px; /* Réduction de la marge à gauche */
+    margin-right: 10px; /* Réduction de la marge à droite */
+  }
+
+  .message-content {
+    max-width: 90%; /* La bulle occupe plus d'espace */
+    font-size: 1rem; /* Taille du texte réduite */
+    padding: 10px 15px; /* Réduction du padding pour petits écrans */
+  }
+}
+
+/* Messages ultra petits écrans */
+@media (max-width: 480px) {
+  .message-content {
+    font-size: 0.9rem; /* Texte encore légèrement réduit */
+    padding: 8px 12px; /* Ajustement du padding */
+  }
+}

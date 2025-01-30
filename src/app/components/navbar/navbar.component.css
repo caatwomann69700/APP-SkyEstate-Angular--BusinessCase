@@ -1,0 +1,415 @@
+/* Corps de base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}  
+
+header {
+  background-color: #f8f9fa; /* Gris très clair */
+}
+
+
+
+/* Pre-navbar styles */
+.pre-navbar {
+  background-color: #2076C5; /* Bleu foncé */
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  position: fixed; /* Fixée en haut */
+  top: 0;
+  left: 0;
+  width: 100%; /* Occupe toute la largeur */
+  z-index: 999; /* Au-dessus des autres éléments */
+  height: 40px; /* Hauteur de la pre-navbar */
+  line-height: 40px; /* Alignement vertical du texte */
+  margin: 0; /* Aucune marge */
+  padding: 0; /* Aucun padding */
+}
+
+/* Style pour le texte "The Cohort" */
+.navbar-brand .ms-2 {
+  font-size: 1.5rem; /* Taille du texte pour qu'il soit grand */
+  font-weight: bold; /* Texte en gras */
+  color: #000000; /* Couleur noire par défaut */
+  letter-spacing: 0.05em; /* Espacement entre les lettres */
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #f8f9fa; /* Couleur de fond de la navbar */
+  position: fixed; /* Fixée en haut sous la pre-navbar */
+  top: 38px; /* Ajuste la position pour qu'elle soit juste sous la pre-navbar */
+  left: 0;
+  width: 100%; /* Largeur de la navbar */
+  z-index: 998; /* En dessous de la pre-navbar */
+  margin: 0; /* Supprime toute marge externe */
+  padding: 20px 0px 20px 0px; /* Supprime tout padding interne */
+}
+
+
+/* Cacher l'icône par défaut du menu hamburger */
+
+/* Supprime les bordures au clic (focus) sur le menu toggler */
+.navbar-toggler:focus {
+  outline: none; /* Supprime le contour */
+  box-shadow: none; /* Supprime l'ombre (si elle existe) */
+}
+
+/* Supprime toute bordure par défaut */
+.navbar-toggler {
+  border: none; /* Supprime la bordure autour du bouton */
+  background: none; /* Supprime tout arrière-plan si nécessaire */
+}
+
+
+/* Conteneur pour les éléments alignés à droite */
+.navbar-nav.ms-auto.align-items-center {
+  display: flex; /* Utilise un conteneur flex */
+  flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
+  gap: 10px; /* Espacement entre "Inscription" et "Connexion" */
+  justify-content: flex-start; /* Aligne à gauche */
+}
+
+/* Style pour le lien "Inscription" */
+.navbar-nav .nav-link {
+  margin: 0; /* Supprime toute marge */
+  padding: 0.5rem 1rem; /* Ajuste l'espacement interne */
+  font-size: 1rem; /* Taille du texte */
+  text-align: left; /* Centre le texte */
+}
+
+/* Style pour le bouton "Connexion" */
+.btn-blue {
+  margin: 0; /* Supprime toute marge */
+  padding: 0.5rem 1rem; /* Ajuste l'espacement interne */
+  font-size: 1rem; /* Taille du texte */
+  line-height: 1.5; /* Alignement vertical */
+}
+
+/* Responsivité : Alignement horizontal dans le menu mobile */
+@media (max-width: 768px) {
+  .navbar-nav.ms-auto.align-items-center {
+    flex-direction: row; /* Garde l'alignement horizontal */
+    justify-content: flex-start; /* Aligne les éléments à gauche */
+  }
+}
+
+.navbar-brand img {
+  width: 70px;
+  height: auto;
+}
+.navbar-nav .nav-link {
+  margin-left: 1rem; 
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 0; /* Supprime l'espace vertical par défaut */
+  line-height: 1.5; /* Alignement avec le bouton */
+  font-size: 1rem;
+  /* font-weight: bold; */
+  
+}
+.navbar-nav .nav-link:hover {
+  color: #2076C5; /* Couleur bleu au survol */
+}
+.nav-item.me-3 {
+  margin-right: 1rem; /* Espacement entre le lien violet et le bouton */
+}
+/* Bouton bleu sans coins arrondis */
+/* Style du bouton bleu */
+.btn-blue {
+  background-color: #2076C5; /* Couleur personnalisable */
+  color: #ffffff; /* Texte blanc */
+  border: none; /* Pas de bordure */
+  border-radius: 0; /* Suppression des coins arrondis */
+  padding: 0.6rem 1.2rem; /* Ajustement de la taille du bouton */
+  font-size: 1rem; /* Taille du texte */
+  font-weight: bold; /* Texte en gras */
+  line-height: 1.5; /* Alignement du texte */
+  cursor: pointer; /* Curseur pointeur */
+  transition: background-color 0.3s ease; /* Effet hover */
+}
+
+#dynamic-city {
+  transition: opacity 0.5s ease-in-out;
+}
+
+#dynamic-city.fade-out {
+  opacity: 0;
+}
+
+/* Effet au survol pour le bouton bleu */
+.btn-blue:hover {
+  background-color: #0056b3; /* Couleur plus foncée */
+}
+
+.text-purple {
+  color: #2076C5;
+}
+
+/* Section Hero */
+.hero-section {
+  padding: 3rem 1rem;
+}
+.hero-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.hero-p {
+  font-size: 1rem;
+  color: #6c757d;
+}
+.custom-image {
+  width: 530px;
+  height: 530px;
+  border-radius: 270px 270px 0 0;
+  border: 15px solid #ffffff;
+  object-fit: cover;
+ 
+}
+
+
+
+@media (max-width: 768px) {
+  .custom-image {
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+  }
+}
+
+/* Barre de recherche */
+/* Barre de recherche */
+
+/* Supprime l'espacement entre les colonnes */
+.search-box .row.g-0 > [class*='col-'] {
+  padding-left: 0; /* Supprime l'espacement à gauche */
+  padding-right: 0; /* Supprime l'espacement à droite */
+}
+
+/* Champ Ville */
+.ville-field {
+  background-color: #2076C5; /* Bleu très clair */
+  color: #ffffff; /* Texte blanc */
+  border: none; /* Pas de bordure */
+  border-radius: 0; /* Supprime les coins arrondis pour un alignement parfait */
+  padding: 0.8rem; /* Espacement interne */
+}
+
+.ville-field::placeholder {
+  color: #ffffff; /* Texte de l'espace réservé (placeholder) blanc */
+}
+
+/* Champs Arrivée et Départ */
+.arrivee-field,
+.depart-field {
+  background-color: #d3d3d3; /* Gris foncé */
+  color: #000000; /* Texte noir */
+  border: none;
+  border-radius: 0; /* Supprime les coins arrondis */
+  padding: 0.8rem;
+}
+
+.arrivee-field::placeholder,
+.depart-field::placeholder {
+  color: #000000; /* Texte de l'espace réservé noir */
+}
+
+/* Carré Blanc */
+.white-box {
+  background-color: #ffffff; /* Fond blanc */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  padding: 1.5rem; /* Espacement interne */
+  margin-top: 1rem; /* Espacement au-dessus du carré blanc */
+}
+
+/* Carré Gris */
+.grey-box {
+  background-color: #d3d3d3; /* Gris */
+  padding: 1rem;
+ 
+  width: 45%; /* Largeur ajustable */
+  text-align: center;
+}
+
+/* Séparateur entre les deux éléments */
+.separator {
+  width: 1px;
+  height: 100%;
+  background-color: #000000; /* Noir */
+}
+
+/* Bouton Chercher */
+.btn-custom {
+  background-color: #2076C5; /* Couleur personnalisable */
+  color: #ffffff; /* Texte blanc */
+  border: none;
+  padding: 0.8rem 2rem; /* Ajuste l'espacement */
+  font-size: 1rem; /* Taille du texte */
+  font-weight: bold;
+  
+  transition: all 0.3s ease-in-out; /* Transition pour hover */
+}
+
+.btn-custom:hover {
+  background-color: #2076C5; /* Couleur plus foncée au survol */
+ 
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .grey-box {
+      width: 100%; /* Largeur totale sur mobile */
+      margin-bottom: 1rem; /* Espacement entre les boîtes */
+  }
+
+  .separator {
+      display: none; /* Supprime le séparateur sur mobile */
+  }
+}
+
+.highlighte-stat { 
+  background-color: #ffffff4f; /* Bleu personnalisé */
+  color: #ffffff; /* Texte blanc pour contraste */
+ 
+  padding: 1rem; /* Espacement interne */
+
+}
+.highlighte-stat .stat-value {
+  font-size: 1.8rem; /* Taille de la valeur */
+  font-weight: bold;
+}
+/* Style pour la statistique avec fond bleu */
+.highlighted-stat {
+  background-color: #2075c54f; /* Bleu personnalisé */
+  color: #ffffff; /* Texte blanc pour contraste */
+ 
+  padding: 1rem; /* Espacement interne */
+}
+
+.highlighte-stat .stat-label {
+  font-size: 1rem; /* Taille de la description */
+  margin-top: 0.5rem; /* Espacement entre valeur et description */
+}
+
+
+/* Ajuste la taille du texte pour qu'il reste lisible */
+.highlighted-stat .stat-value {
+  font-size: 1.8rem; /* Taille de la valeur */
+  font-weight: bold;
+}
+
+.highlighted-stat .stat-label {
+  font-size: 1rem; /* Taille de la description */
+  margin-top: 0.5rem; /* Espacement entre valeur et description */
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2076C5;
+}
+.stat-label {
+  font-size: 0.9rem;
+  color: #000000;
+}
+@media (max-width: 768px) {
+  .stats-section {
+      text-align: center; /* Centre les stats sur mobile */
+  }
+
+  .stat-value {
+      font-size: 1.2rem; /* Taille réduite sur mobile */
+  }
+
+  .stat-label {
+      font-size: 0.8rem; /* Taille réduite sur mobile */
+  }
+}
+
+/* Pre-navbar : START */
+/* Pre-navbar styles */
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+ 
+  .pre-navbar {
+    height: 50px;
+    line-height: 50px;
+    font-size: 0.8rem;
+  }
+
+  .navbar {
+    top: 50px;
+    padding: 10px 0;
+  }
+
+  .navbar-brand .logo {
+    width: 40px;
+  }
+
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .pre-navbar {
+    font-size: 0.7rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Lien Mon Compte */
+.nav-link.text-blue {
+  text-decoration: none; /* Supprime le soulignement */
+  font-size: 1rem; /* Taille du texte */
+  color: #2076C5; /* Couleur bleue */
+  margin-right: 15px; /* Espacement entre les liens */
+  font-weight: normal; /* Texte normal (pas en gras) */
+}
+
+.nav-link.text-blue:hover {
+  text-decoration: none; /* Pas de soulignement au survol */
+  color: #0056b3; /* Couleur bleue plus foncée au survol */
+}
+
+/* Bouton Déconnexion */
+.btn-blue {
+  background-color: #2076C5; /* Couleur bleue */
+  color: white; /* Texte blanc */
+  border: none; /* Supprime la bordure */
+  border-radius: 0; /* Pas de coins arrondis */
+  padding: 0.5rem 1rem; /* Espacement interne */
+  font-size: 1rem; /* Taille du texte */
+  font-weight: bold; /* Texte normal (pas en gras) */
+  cursor: pointer; /* Curseur pointeur */
+  transition: background-color 0.3s ease; /* Animation au survol */
+}
+
+.btn-blue:hover {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Style pour l'élément actif */
+.nav-link.active {
+  color: #2076C5 !important; /* Couleur bleue plus foncée */
+  font-weight: bold; /* Texte en gras */
+  text-decoration: underline; /* Soulignement pour l'élément actif */
+}
+
+/* Optionnel : Si vous voulez un fond pour l'élément actif */
+

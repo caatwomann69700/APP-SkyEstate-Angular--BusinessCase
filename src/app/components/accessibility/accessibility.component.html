@@ -1,0 +1,13 @@
+<!-- Icône d'accessibilité visible -->
+<div class="accessibility-icon" (click)="togglePanel()">
+  <i class="material-icons" aria-label="Accessibilité">accessibility</i>
+</div>
+
+<!-- Panneau d'accessibilité -->
+<div *ngIf="isPanelOpen" class="accessibility-panel">
+  <h3>Options d'accessibilité</h3>
+  <button (click)="toggleDarkMode()">Mode sombre</button>
+  <button (click)="increaseFontSize()">Augmenter la taille du texte</button>
+  <button (click)="decreaseFontSize()">Diminuer la taille du texte</button>
+  <button (click)="resetPreferences()">Réinitialiser les paramètres</button>
+</div>

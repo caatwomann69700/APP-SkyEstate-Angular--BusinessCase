@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .category-section h3 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .category-section p {
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .card {
+    border: none;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0%;
+    width: 350px;
+    height: 300px;
+    margin: 0 auto;
+  }
+  
+  .card-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px; /* Ajoute un espace en dessous de l'image */
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-icon-wrapper img {
+    width: 70%; /* Réduit la taille de l'icône à 50% du conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+  }
+  
+  .card-title {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 15px; /* Ajoute un espace en dessous du titre */
+    font-weight: bold;
+  }
+  
+  .card-text {
+    color: #555;
+    font-size: 14px;
+    margin-top: 10px; /* Ajoute un espace au-dessus du texte */
+  }
+  
+  .card-right-wrapper {
+    position: relative;
+  }
+  
+  .background-box {
+    position: absolute;
+    background-color: #f8f9fa;
+    width: 600px;
+    height: 300px;
+    bottom: -600px;
+    left: 740px;
+    z-index: -1;
+  }
+  
+  @media (max-width: 992px) {
+    .category-section h3 {
+      font-size: 20px;
+    }
+  
+    .category-section p {
+      font-size: 14px;
+    }
+  
+    .card {
+      width: 250px;
+      height: 250px;
+    }
+  
+    .card-icon-wrapper {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .card-icon {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .background-box {
+      width: 500px;
+      height: 200px;
+      bottom: -80px;
+      right: -90px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .category-section h3 {
+      font-size: 18px;
+    }
+  
+    .category-section p {
+      font-size: 13px;
+    }
+  
+    .card {
+      width: 220px;
+      height: 220px;
+    }
+  
+    .card-icon-wrapper {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .card-icon {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .background-box {
+      width: 400px;
+      height: 150px;
+      bottom: -50px;
+      right: -50px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .category-section h3 {
+      font-size: 16px;
+      text-align: left;
+    }
+  
+    .category-section p {
+      font-size: 12px;
+      text-align: left;
+    }
+  
+    .card {
+      width: 100%;
+      height: auto;
+    }
+  
+    .card-icon-wrapper {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .card-icon {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .background-box {
+      display: none;
+    }
+  }
+  

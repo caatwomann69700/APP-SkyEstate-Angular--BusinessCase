@@ -1,0 +1,44 @@
+.fonctionnement {
+    background-color: #f8f9fa; /* Fond gris clair */
+    color: #000000; /* Texte noir */
+    padding: 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  .fonctionnement h1 {
+    color: #2076C5; /* Bleu principal */
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .fonctionnement h2 {
+    color: #2076C5; /* Bleu principal */
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .fonctionnement p {
+    margin-bottom: 1rem;
+  }
+  
+  .fonctionnement ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+  }
+  
+  .fonctionnement ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .fonctionnement a {
+    color: #2076C5;
+    text-decoration: none;
+  }
+  
+  .fonctionnement a:hover {
+    text-decoration: underline;
+  }
+  

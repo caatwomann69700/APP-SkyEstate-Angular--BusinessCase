@@ -1,0 +1,122 @@
+/* General Styles */
+.app-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+.app-footer .container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.app-footer ul.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.app-footer ul.footer-links li a {
+  color: #343a40;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.app-footer ul.footer-links li a:hover {
+  color: #007bff;
+}
+
+/* Responsive Layout */
+.app-footer .d-flex {
+  flex-wrap: wrap;
+}
+
+.app-footer .d-flex.align-items-center {
+  flex-wrap: wrap;
+}
+
+.app-footer p {
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+/* Breakpoints for Responsive Design */
+@media (max-width: 768px) {
+  .app-footer .d-flex.align-items-center {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .app-footer ul.footer-links {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .app-footer ul.footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .app-footer p {
+    margin-top: 1rem;
+  }
+}
+/* General Styles */
+.app-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+.app-footer .container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.app-footer ul.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.app-footer ul.footer-links li a {
+  color: #343a40;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.app-footer ul.footer-links li a:hover {
+  color: #007bff;
+}
+
+/* Responsive Layout */
+.app-footer .d-flex {
+  flex-wrap: wrap;
+}
+
+.app-footer .d-flex.align-items-center {
+  flex-wrap: wrap;
+}
+
+.app-footer p {
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+/* Breakpoints for Responsive Design */
+@media (max-width: 768px) {
+  .app-footer .d-flex.align-items-center {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .app-footer ul.footer-links {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .app-footer ul.footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .app-footer p {
+    margin-top: 1rem;
+  }
+}
