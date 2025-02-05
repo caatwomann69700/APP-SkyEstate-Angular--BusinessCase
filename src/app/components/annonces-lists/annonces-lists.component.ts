@@ -3,6 +3,8 @@ import { AnnonceService } from '../../services/annonce.service';
 import { IAnnonce } from '../../models/annonce.model';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
+import { environment } from '../../../environements/environement';
 import { ImageService } from '../../services/image.service';
 
 
@@ -16,7 +18,9 @@ import { ImageService } from '../../services/image.service';
 export class AnnoncesListsComponent implements OnInit {
   annonces: IAnnonce[] = [];
   fadeStates: boolean[] = [];
-
+  baseUrl = environment.baseUrl;
+  assetsImages = environment.assetsImages;
+  
   constructor(
     private annonceService: AnnonceService,
     private imageService: ImageService
@@ -30,19 +34,13 @@ export class AnnoncesListsComponent implements OnInit {
         this.annonces = data.member;
 
         // ✅ Récupère l'image de chaque annonce
-        this.annonces.forEach(annonce => {
-          if (annonce.image) {
-            const imageId = parseInt(annonce.image.split('/').pop() || '0', 10); // Extrait l'ID de l'image
-          
-            if (!isNaN(imageId) && imageId > 0) {
-              this.imageService.getImageUrlById(imageId).subscribe(imageUrl => {
-                annonce.imageUrl = imageUrl; // ✅ Stocke l'URL de l'image correctement
-              });
-            } else {
-              annonce.imageUrl = 'assets/Icones/default-image.jpg'; // ✅ Image par défaut en cas d'erreur
-            }
-          }
-      });
+        // ✅ Plus besoin d'extraire l'ID, on utilise directement le `name`
+this.annonces.forEach(annonce => {
+  annonce.imageUrl = annonce.image
+    ? `${this.baseUrl}/${this.assetsImages}${annonce.image.name}`
+    : 'assets/Icones/default-image.jpg';
+});
+
 
       } else {
         console.error('❌ Erreur : les données reçues ne contiennent pas de tableau dans la clé "member".');

@@ -30,14 +30,17 @@ export class AnnonceService {
     return this.http.get<IAnnonce>(`${this.apiUrl}/${id}`).pipe(
       map(annonce => ({
         ...annonce,
-        imageUrl: annonce.image ? `${environment.baseUrl}/images/${annonce.image.split('/').pop()}` : 'assets/Icones/default-image.jpg'
+        imageUrl: annonce.image && annonce.image.name
+          ? `${environment.baseUrl}/images/${annonce.image.name}`
+          : 'assets/Icones/default-image.jpg'
       })),
       catchError(error => {
-        console.error;
+        console.error('Erreur récupération annonce:', error);
         return of({} as IAnnonce);
       })
     );
   }
+  
 
   // 📌 Méthode pour récupérer les annonces filtrées
   searchAnnonces(filters: any): Observable<{ member: IAnnonce[] }> {

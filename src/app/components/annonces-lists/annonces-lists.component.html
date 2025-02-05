@@ -10,7 +10,12 @@
       [class.fade-out]="fadeStates[i]"
     >
       <!-- ✅ Affichage de l'image principale -->
-      <img [src]="annonce.imageUrl" alt="Image de l'annonce" class="card-img-top" />
+      <!-- ✅ Affichage de l'image principale -->
+<img
+[src]="annonce.image ? baseUrl + '/' + assetsImages + annonce.image.name : 'assets/Icones/default-image.jpg'"
+alt="Image de l'annonce"
+class="card-img-top"
+/>
 
       <h3>{{ annonce.title }}</h3>
       <p>{{ annonce.description }}</p>

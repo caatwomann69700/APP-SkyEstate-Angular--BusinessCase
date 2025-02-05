@@ -4,6 +4,7 @@ import { AnnonceService } from '../../services/annonce.service';
 import { IAnnonce } from '../../models/annonce.model';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { IImage } from '../../models/image.model';
 
 @Component({
   selector: 'app-annonce-card',
@@ -33,14 +34,12 @@ export class AnnonceCardComponent {
       }
     });
   }
-  getImageUrl(imagePath: string | undefined): string {
-    if (!imagePath) {
-      return 'assets/Icones/default-image.jpg'; // ✅ Image par défaut si aucune image
+  getImageUrl(image: IImage | undefined): string {
+    if (!image || !image.name) {
+      return 'assets/Icones/default-image.jpg'; // ✅ Image par défaut
     }
   
-    return imagePath.startsWith('/api/images/')
-      ? `${environment.baseUrl}/images/${imagePath.split('/').pop()}` // ✅ Convertit le chemin en URL complète
-      : imagePath;
+    return `${environment.baseUrl}/images/${image.name}`; // ✅ URL correcte
   }
   
   

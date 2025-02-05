@@ -7,7 +7,9 @@ export interface IImage {
   "@id": string;
   "@type": string;
   id: number;
-  name: string ;
+  name: string;
+
+
   annonce: IAnnonce ;
   category: ICategory ;
   amenity: IAmenity ;

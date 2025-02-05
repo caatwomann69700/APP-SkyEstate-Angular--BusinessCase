@@ -1,0 +1,168 @@
+/* === Styles généraux === */
+* {
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    color: #3b3b3b; /* Couleur de texte par défaut */
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  button {
+    font-family: inherit;
+    font-size: inherit;
+    color: #3b3b3b; /* Couleur de texte uniforme */
+  }
+  
+  input::placeholder,
+  select::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Placeholder légèrement transparent */
+    text-align: center;
+  }
+  
+  /* === Barre de recherche === */
+  .search-bar-input {
+    height: 50px;
+    width: 171px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ffffff;
+    color: #3b3b3b; /* Couleur de texte uniforme */
+  }
+  
+  .city-input {
+    background-color: rgba(32, 117, 197, 0.2); /* Bleu clair */
+    color: #3b3b3b; /* Couleur de texte uniforme */
+  }
+  
+  .category-select {
+    background-color: #ffffff; /* Fond blanc */
+    color: #3b3b3b !important; /* Couleur de texte uniforme avec priorité */
+    font-family: Arial, sans-serif; /* Police uniforme */
+    font-size: 16px; /* Taille de police uniforme */
+    font-weight: bold; /* Texte en gras */
+    text-align: center; /* Texte centré */
+    height: 50px; /* Hauteur uniforme */
+    padding: 10px; /* Même padding */
+    border: none; /* Pas de bordure */
+    outline: none; /* Supprime le contour */
+    -webkit-appearance: none; /* Supprime l'apparence système (Safari/Chrome) */
+    -moz-appearance: none; /* Supprime l'apparence système (Firefox) */
+    appearance: none; /* Supprime l'apparence système */
+  }
+  
+  .category-select option {
+    color: #3b3b3b !important; /* Assure la couleur des options */
+    font-weight: bold; /* Texte en gras */
+  }
+  
+  /* Placeholder spécifique pour l'option par défaut */
+  .category-select option[value=""] {
+    color: rgba(0, 0, 0, 0.5); /* Placeholder légèrement transparent */
+  }
+  
+  .occupants-input {
+    background-color: #ffffff; /* Fond blanc */
+    color: #3b3b3b; /* Couleur de texte uniforme */
+  }
+  
+  /* === Filtres de prix === */
+  .price-filter-row {
+    height: 70px;
+    width: 513px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border: none;
+  }
+  
+  .price-input {
+    height: 50px; /* Même hauteur que les autres champs */
+    width: 180px; /* Largeur standard */
+    padding: 10px; /* Même padding que les autres */
+    border: none; /* Suppression des bordures */
+    outline: none; /* Suppression des contours au focus */
+    font-size: 16px; /* Même taille de police que la case "Ville" */
+    font-weight: bold; /* Texte en gras pour uniformité */
+    text-align: center; /* Texte centré */
+    background-color: #F8F9FA; /* Fond gris clair similaire */
+    color: #3b3b3b; /* Couleur de texte uniforme */
+  }
+  
+  /* Suppression des bordures focus */
+  input:focus,
+  select:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* Bouton de recherche */
+  .search-button {
+    height: 50px;
+    width: 150px;
+    background-color: #2076C5;
+    color: #fff;
+    font-size: inherit;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  .search-button:hover {
+    background-color: #003366;
+  }
+  
+  /* === Media Queries === */
+  /* Tablettes */
+  @media (max-width: 768px) {
+    .search-bar-input {
+      width: 150px;
+      padding: 8px;
+    }
+  
+    .price-filter-row {
+      width: 450px;
+    }
+  
+    .price-input {
+      width: 150px;
+    }
+  
+    .search-button {
+      width: 140px;
+    }
+  }
+  
+  /* Mobiles */
+  @media (max-width: 576px) {
+    .search-bar-input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .price-filter-row {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      height: auto;
+      padding: 10px;
+    }
+  
+    .price-input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .search-button {
+      width: 100%;
+    }
+  }
+  

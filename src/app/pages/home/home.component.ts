@@ -9,7 +9,7 @@ import { SearchBarComponent } from "../../components/search-bar/search-bar.compo
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, CategorySectionComponent, ChatComponent, WhyTrustUsComponent, AnnonceCardComponent, SearchBarComponent],
+  imports: [HeaderComponent, CategorySectionComponent, ChatComponent, WhyTrustUsComponent, AnnonceCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

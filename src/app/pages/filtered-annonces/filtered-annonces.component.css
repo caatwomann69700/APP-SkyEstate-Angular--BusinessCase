@@ -1,0 +1,125 @@
+/* Grille pour 3 cartes par ligne */
+/* Ajoutez un padding-top pour compenser la hauteur de la navbar */
+.container {
+    margin-top: 20px; /* Si vous utilisez une navbar sticky */
+    padding-top: 80px; /* Ajustez cette valeur à la hauteur exacte de votre navbar */
+  }
+  
+  /* Ajustez le style de h2 si nécessaire */
+  .container h3 {
+    margin-bottom: 20px; /* Ajoute un espace entre le titre et les cartes */
+    text-align: left; /* Centre le titre si ce n'est pas déjà fait */
+  }
+  
+  
+  .annonce-card {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 7;
+    transform: translateY(0);
+  }
+  
+  .annonce-card.fade-out {
+    opacity: 50; /* Disparaît progressivement */
+    transform: translateY(-100px); /* Se déplace légèrement vers le haut */
+    pointer-events: none; /* Empêche l'interaction avec les cartes disparues */
+  }
+  
+  
+  .annonces-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    gap: 20px; /* Espacement entre les cartes */
+    margin-bottom: 20px; /* Espacement entre les rangées */
+  }
+  
+  /* Style de la carte */
+  .annonce-card {
+    background-color: #ffffff;
+    border-radius: 0;
+    width: 100%; /* Prend toute la largeur de la colonne */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  /* Image de la carte */
+  .annonce-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0;
+  }
+  
+  /* Titre de l'annonce */
+  .annonce-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    text-align: left;
+  }
+  
+  /* Description */
+  .annonce-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  /* Location, City, and PostalCode sur une seule ligne */
+  .location-line {
+    font-size: 14px;
+    color: #666;
+    margin: 0px 0;
+    display: flex;
+    
+  }
+  
+  /* Conteneur pour prix et bouton */
+  .price-button-container {
+    display: flex;
+    justify-content: space-between; /* Aligne prix à gauche et bouton à droite */
+    align-items: center; /* Centre les éléments verticalement */
+    margin-top: 10px; /* Ajoute un espacement au-dessus */
+  }
+  
+  /* Style du prix */
+  .price {
+    font-weight: bold;
+    font-size: 16px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #2076C5;
+    margin: 0; /* Supprime les marges par défaut */
+  }
+  
+  /* Style du bouton */
+  .reserve-button {
+    background-color: #2076C5;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reserve-button:hover {
+    background-color: #004c99;
+  }
+  
+  /* Responsive pour petits écrans */
+  @media (max-width: 768px) {
+    .annonces-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur écrans moyens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .annonces-grid {
+      grid-template-columns: 1fr; /* 1 colonne sur petits écrans */
+    }
+  }
+  
