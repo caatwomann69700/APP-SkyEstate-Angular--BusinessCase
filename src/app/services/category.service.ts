@@ -14,14 +14,29 @@ export class CategoryService {
   constructor(private http: HttpClient) {}
 
   // Récupérer toutes les catégories
-  
-getCategories(): Observable<ICategory[]> {
-  return this.http.get<{ member: ICategory[] }>(`${environment.apiBaseUrl}/categories`).pipe(
-    map(response => response.member) // 🔥 Extrait le tableau `member`
-  );
-}
+  getCategories(): Observable<ICategory[]> {
+    return this.http.get<{ member: ICategory[] }>(`${this.apiUrl}`).pipe(
+      map(response => response.member) // 🔥 Extrait le tableau `member`
+    );
+  }
+
   // Récupérer une catégorie par ID
   getCategoryById(id: number): Observable<ICategory> {
     return this.http.get<ICategory>(`${this.apiUrl}/${id}`);
+  }
+
+  // Créer une nouvelle catégorie
+  createCategory(category: ICategory): Observable<ICategory> {
+    return this.http.post<ICategory>(`${this.apiUrl}`, category);
+  }
+
+  // Mettre à jour une catégorie existante
+  updateCategory(id: number, category: ICategory): Observable<ICategory> {
+    return this.http.put<ICategory>(`${this.apiUrl}/${id}`, category);
+  }
+
+  // Supprimer une catégorie
+  deleteCategory(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

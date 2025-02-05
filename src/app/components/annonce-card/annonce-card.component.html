@@ -5,11 +5,8 @@
       </h3>
       <div class="horizontal-scroll-container d-flex overflow-auto">
         <div class="card" *ngFor="let annonce of annonces">
-          <img
-            [src]="imageBaseUrl + annonce.image?.name"
-            [alt]="annonce.image?.name"
-            class="card-img-top"
-          />
+          <img [src]="getImageUrl(annonce.image)" [alt]="annonce.title" class="card-img-top" />
+
           <div class="card-body">
             <h5 class="card-title">{{ annonce.title }}</h5>
             <span class="city">{{ annonce.city }}</span>

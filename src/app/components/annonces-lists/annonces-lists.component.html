@@ -1,0 +1,31 @@
+<div class="container my-4">
+  <h3 class="text-left mb-4">
+    Cherchez votre prochain chez-vous avec Sky Estate
+  </h3>
+  
+  <div class="annonces-grid">
+    <div 
+      class="annonce-card" 
+      *ngFor="let annonce of annonces; let i = index" 
+      [class.fade-out]="fadeStates[i]"
+    >
+      <!-- ✅ Affichage de l'image principale -->
+      <img [src]="annonce.imageUrl" alt="Image de l'annonce" class="card-img-top" />
+
+      <h3>{{ annonce.title }}</h3>
+      <p>{{ annonce.description }}</p>
+      <p class="location-line">
+        <span>{{ annonce.location }}</span>, 
+        <span>{{ annonce.city }}</span>, 
+        <span>{{ annonce.postalCode }}</span>
+      </p>
+
+      <div class="price-button-container">
+        <p class="price">{{ annonce.price | currency:'EUR' }}</p>
+        <button class="reserve-button" [routerLink]="'/annonce/' + annonce.id">
+          Réserver
+        </button>            
+      </div>
+    </div>
+  </div>
+</div>

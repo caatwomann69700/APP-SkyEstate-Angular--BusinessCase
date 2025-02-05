@@ -148,13 +148,20 @@ ng g s models/nom-du-service
 + image 
 + user
 + 
+## Page des annonces 
 ### Création du composant category-section qui va me servir d'afficher les categories, avec la commande suivante : 
 ````bash 
 ng g c components/category-section --standalone 
 ````
 
-
-
+### Création de la page annonces-page pour afficher les annonces dans la section annonces qui est un li affihcer dans la navbar, avec la commande suivante : 
+````bash 
+ng g c pages/annonces-page 
+````
+### Création du composant annonces-lists pour afficher les annonces dans la page annonces-page, avec la commande suivante : 
+````bash 
+ng g c components/annonces-lists --standalone 
+````
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 import { IAnnonce } from '../models/annonce.model';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { environment } from '../../environements/environement';
 
@@ -15,12 +14,46 @@ export class AnnonceService {
 
   constructor(private http: HttpClient) {}
 
-  getAnnonces(): Observable<IAnnonce[]> {
-    return this.http.get<IAnnonce[]>(this.apiUrl).pipe(
-      tap((data) => console.log('Données de l’API:', data)), // Vérifie si c'est bien un tableau
-      catchError((error) => {
+  // 📌 Lire toutes les annonces et construire les URLs d'images
+  getAnnonces(): Observable<{ member: IAnnonce[] }> {
+    return this.http.get<{ member: IAnnonce[] }>(this.apiUrl).pipe(
+      tap(data => console.log('Données reçues :', data)),
+      catchError(error => {
         console.error('Erreur API:', error);
-        return of([]); // Retourne un tableau vide en cas d’erreur
+        return of({ member: [] });
+      })
+    );
+  }
+  
+  // Lire une annonce par son ID (Read)
+  getAnnonceById(id: number): Observable<IAnnonce> {
+    return this.http.get<IAnnonce>(`${this.apiUrl}/${id}`).pipe(
+      map(annonce => ({
+        ...annonce,
+        imageUrl: annonce.image ? `${environment.baseUrl}/images/${annonce.image.split('/').pop()}` : 'assets/Icones/default-image.jpg'
+      })),
+      catchError(error => {
+        console.error;
+        return of({} as IAnnonce);
+      })
+    );
+  }
+
+  // 📌 Méthode pour récupérer les annonces filtrées
+  searchAnnonces(filters: any): Observable<{ member: IAnnonce[] }> {
+    let params = new HttpParams();
+    
+    Object.keys(filters).forEach(key => {
+      if (filters[key]) {
+        params = params.set(key, filters[key]); // Ajoute les filtres si définis
+      }
+    });
+
+    return this.http.get<{ member: IAnnonce[] }>(this.apiUrl, { params }).pipe(
+      tap(data => console.log('Annonces filtrées:', data)),
+      catchError(error => {
+        console.error('Erreur API:', error);
+        return of({ member: [] });
       })
     );
   }

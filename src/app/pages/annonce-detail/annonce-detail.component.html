@@ -1,0 +1,76 @@
+<div class="container my-5">
+  <!-- 📌 Titre de l'annonce -->
+  <h3>{{ annonce?.title }}</h3>
+
+  <!-- 📌 Section des images en galerie 3x2 -->
+  <div *ngIf="imagesList.length > 0" class="image-gallery">
+    <div class="image-row">
+      <div *ngFor="let image of imagesList; let i = index" class="image-item">
+        <img [src]="urlImage + image.name" [alt]="annonce?.title" class="image-thumbnail">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Message si aucune image n'est disponible -->
+  <div *ngIf="imagesList.length === 0">
+    <p class="text-muted">Aucune image disponible pour cette annonce.</p>
+  </div>
+
+  <!-- 📌 Description -->
+  <p>{{ annonce?.description }}</p>
+
+  <!-- 📌 Informations sur la localisation -->
+  <div class="location-info">
+    <img src="assets/Icones/location.png" alt="Adresse" class="info-icon">
+    <span class="address">{{ annonce?.location }}</span>
+    <span class="separator">|</span>
+    <span class="city">{{ annonce?.city }}</span>
+    <span class="separator">|</span>
+    <span class="postal-code">{{ annonce?.postalCode }}</span>
+  </div>
+
+  <!-- 📌 Informations sur les occupants -->
+  <div class="occupants-info">
+    <img src="assets/Icones/person.png" alt="Max Occupants" class="info-icon">
+    <span class="max-occupants">{{ annonce?.maxOccupants }} occupant(s)</span>
+  </div>
+
+  <!-- 📌 Informations sur la surface -->
+  <div class="occupants-info">
+    <img src="assets/Icones/extension.png" alt="Surface" class="info-icon">
+    <span class="max-occupants">{{ annonce?.surface }} m²</span>
+  </div>
+
+  <!-- 📌 Commodités -->
+  <h4>Les Commodités de ce logement</h4>
+  <div *ngIf="amenitiesDetails.length > 0" class="commodities-container">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <ul class="commodities-list">
+          <li *ngFor="let amenity of amenitiesDetails.slice(0, 3)">
+            <img *ngIf="amenity.icon" [src]="amenity.icon" [alt]="amenity.name" class="amenity-icon">
+            <span>{{ amenity.name }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6">
+        <ul class="commodities-list">
+          <li *ngFor="let amenity of amenitiesDetails.slice(3, 6)">
+            <img *ngIf="amenity.icon" [src]="amenity.icon" [alt]="amenity.name" class="amenity-icon">
+            <span>{{ amenity.name }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📌 Message si aucune commodité n'est disponible -->
+  <div *ngIf="amenitiesDetails.length === 0">
+    <p class="text-danger">Aucune commodité disponible.</p>
+  </div>
+
+  <!-- 📌 Message de chargement -->
+  <div *ngIf="!annonce">
+    <p class="text-center text-muted">Chargement des données...</p>
+  </div>
+</div>

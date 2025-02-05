@@ -12,11 +12,23 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  // Lire les données d'un utilisateur (Read)
   getUserData(): Observable<IUser> {
     return this.http.get<IUser>(`${this.apiUrl}/users/me`);
   }
 
+  // Mettre à jour les données d'un utilisateur (Update)
   updateUserData(userId: number, userData: Partial<IUser>): Observable<any> {
     return this.http.put(`${this.apiUrl}/users/${userId}`, userData);
+  }
+
+  // Créer un nouvel utilisateur (Create)
+  createUser(userData: IUser): Observable<IUser> {
+    return this.http.post<IUser>(`${this.apiUrl}/users`, userData);
+  }
+
+  // Supprimer un utilisateur (Delete)
+  deleteUser(userId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/users/${userId}`);
   }
 }

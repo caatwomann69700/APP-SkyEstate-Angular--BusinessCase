@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchBarComponent } from "../search-bar/search-bar.component";
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [SearchBarComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })

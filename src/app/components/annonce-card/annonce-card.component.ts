@@ -33,5 +33,15 @@ export class AnnonceCardComponent {
       }
     });
   }
+  getImageUrl(imagePath: string | undefined): string {
+    if (!imagePath) {
+      return 'assets/Icones/default-image.jpg'; // ✅ Image par défaut si aucune image
+    }
+  
+    return imagePath.startsWith('/api/images/')
+      ? `${environment.baseUrl}/images/${imagePath.split('/').pop()}` // ✅ Convertit le chemin en URL complète
+      : imagePath;
+  }
+  
   
 }  

@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div class="search-bar-row">
+      <input type="text" class="search-bar-input city-input" placeholder="Ville"
+        [(ngModel)]="filters.city" name="city" />
+      
+      <select class="search-bar-input category-select" [(ngModel)]="filters.category" name="category">
+        <option value="">Catégorie(s)</option>
+        <option value="Studio">Studio</option>
+        <option value="Appartement">Appartement</option>
+        <option value="Maison">Maison</option>
+      </select>
+      
+      <input type="text" class="search-bar-input occupants-input" placeholder="Adulte(s)"
+        [(ngModel)]="filters.maxOccupants" name="maxOccupants" />
+    </div>
+  
+    <div class="price-filter-row mt-0">
+      <input type="text" class="price-input" placeholder="Prix minimum"
+        [(ngModel)]="filters.priceMin" name="priceMin" />
+      
+      <input type="text" class="price-input" placeholder="Prix maximum"
+        [(ngModel)]="filters.priceMax" name="priceMax" />
+      
+      <button type="button" class="search-button" (click)="onSearch()">Rechercher</button>
+    </div>
+  </div>
+  
