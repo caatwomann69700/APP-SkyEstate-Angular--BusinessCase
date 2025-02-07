@@ -40,7 +40,7 @@
     <img src="assets/Icones/extension.png" alt="Surface" class="info-icon">
     <span class="max-occupants">{{ annonce?.surface }} m²</span>
   </div>
-
+ 
   <!-- 📌 Commodités -->
   <h4>Les Commodités de ce logement</h4>
   <div *ngIf="amenitiesDetails.length > 0" class="commodities-container">
@@ -74,3 +74,5 @@
     <p class="text-center text-muted">Chargement des données...</p>
   </div>
 </div>
+
+<app-reservation></app-reservation>

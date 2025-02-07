@@ -141,7 +141,7 @@ ng g s services/nom-du-service
 
 ### Creation de tout les interfaces dans le dossier "models" pour chaque entity avec la commande suivante : 
 ````bash 
-ng g s models/nom-du-service
+ng g s models/nom-d'interface
 ````
 #### pour les entity suivantes : 
 + category
@@ -162,6 +162,24 @@ ng g c pages/annonces-page
 ````bash 
 ng g c components/annonces-lists --standalone 
 ````
+
+## Barre de reservation 
+### Creation de composant barre de reservation 
+````bash 
+ng generate c components/reservation
+````
+### Installation du material datepicker avec la commande suivante : 
++ pour choisir un calendrier  : 
+````bash
+ng add @angular/material
+````
++ importer les modules necessaires dans app.module.ts 
+````bash 
+ MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ````
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

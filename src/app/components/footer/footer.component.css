@@ -1,7 +1,9 @@
 /* General Styles */
+/* Général */
 .app-footer {
   background-color: #f8f9fa;
   border-top: 1px solid #dee2e6;
+  font-size: 0.875rem;
 }
 
 .app-footer .container {
@@ -9,114 +11,103 @@
   margin: auto;
 }
 
-.app-footer ul.footer-links {
+/* Liens à gauche */
+.app-footer .footer-left .footer-links {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.app-footer ul.footer-links li a {
+.app-footer .footer-left .footer-links li a {
   color: #343a40;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.app-footer ul.footer-links li a:hover {
+.app-footer .footer-left .footer-links li a:hover {
   color: #007bff;
 }
 
-/* Responsive Layout */
-.app-footer .d-flex {
-  flex-wrap: wrap;
-}
-
-.app-footer .d-flex.align-items-center {
-  flex-wrap: wrap;
-}
-
-.app-footer p {
+.app-footer .footer-left p {
   color: #6c757d;
-  font-size: 0.875rem;
+  margin-top: 0.5rem;
 }
 
-/* Breakpoints for Responsive Design */
-@media (max-width: 768px) {
-  .app-footer .d-flex.align-items-center {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .app-footer ul.footer-links {
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  .app-footer ul.footer-links li {
-    margin-bottom: 0.5rem;
-  }
-
-  .app-footer p {
-    margin-top: 1rem;
-  }
-}
-/* General Styles */
-.app-footer {
-  background-color: #f8f9fa;
-  border-top: 1px solid #dee2e6;
-}
-
-.app-footer .container {
-  max-width: 1140px;
-  margin: auto;
-}
-
-.app-footer ul.footer-links {
+/* Icônes à droite */
+.app-footer .footer-right .footer-icons {
   list-style: none;
   padding: 0;
+  display: flex;
 }
 
-.app-footer ul.footer-links li a {
-  color: #343a40;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+.app-footer .footer-right .footer-icons li img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
 }
 
-.app-footer ul.footer-links li a:hover {
-  color: #007bff;
+.app-footer .footer-right .footer-icons li img:hover {
+  transform: scale(1.2);
 }
 
-/* Responsive Layout */
-.app-footer .d-flex {
-  flex-wrap: wrap;
-}
 
-.app-footer .d-flex.align-items-center {
-  flex-wrap: wrap;
-}
 
-.app-footer p {
-  color: #6c757d;
-  font-size: 0.875rem;
-}
 
-/* Breakpoints for Responsive Design */
+
+
+/* Responsive pour mobile */
 @media (max-width: 768px) {
-  .app-footer .d-flex.align-items-center {
-    flex-direction: column;
-    text-align: center;
+  /* Conteneur principal */
+  .app-footer .d-flex {
+    display: flex; /* Active le modèle flexbox */
+    flex-wrap: nowrap; /* Garde les éléments sur une seule ligne */
+    justify-content: space-between; /* Texte à gauche et icônes à droite */
+    align-items: center; /* Centre les éléments verticalement */
   }
 
+  /* Liens à gauche */
   .app-footer ul.footer-links {
-    justify-content: center;
-    margin-bottom: 1rem;
+    display: flex; /* Aligne les liens horizontalement */
+    justify-content: flex-start; /* Alignement à gauche */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Supprime les puces */
   }
 
   .app-footer ul.footer-links li {
-    margin-bottom: 0.5rem;
+    margin-right: 0.2rem; /* Espacement entre les liens */
   }
 
+  .app-footer ul.footer-links li:last-child {
+    margin-right: 0; /* Supprime l'espacement après le dernier lien */
+  }
+
+  /* Icônes des réseaux à droite */
+  .app-footer ul.footer-icons {
+    display: flex; /* Aligne les icônes horizontalement */
+    justify-content: flex-end; /* Positionne les icônes à droite */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Supprime les puces */
+  }
+
+  .app-footer ul.footer-icons li {
+    margin-left: 0.5rem; /* Ajoute un espacement entre les icônes */
+  }
+
+  /* Réduction des icônes pour mobile */
+  .app-footer ul.footer-icons li img {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Texte de copyright */
   .app-footer p {
-    margin-top: 1rem;
+    font-size: 0.75rem; /* Réduit la taille du texte sur mobile */
+    margin: 0; /* Supprime les marges */
   }
 }
+
+

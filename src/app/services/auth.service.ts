@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from '../../environements/environement';
 import { IUser } from '../models/user.model';
 import { Router } from '@angular/router'; // 🟢 Import du Router
 import { IRegisterResponse } from '../models/register-response.model';
-
+import { HttpHeaders } from '@angular/common/http';
 
 
 interface ICredentials {
@@ -47,7 +47,18 @@ export class AuthService {
         })
       );
   }
-
+  // ✅ Ajouter l'en-tête Authorization
+  getUserData(): Observable<IUser> {
+    const token = this.getToken();
+    if (!token) {
+      console.error("🚨 Aucun token trouvé !");
+      return throwError(() => new Error("Aucun token trouvé"));
+    }
+  
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<IUser>(`${this.apiUrl}/users/me`, { headers });
+  }
+  
   logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('user');

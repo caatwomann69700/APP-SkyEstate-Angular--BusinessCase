@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { IUser } from '../../models/user.model';
 import { NgForm, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -24,7 +25,10 @@ export class UserDashboardComponent implements OnInit {
   }
 
   loadUserData(): void {
-    this.userService.getUserData().subscribe({
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  
+    this.userService.getUserData(headers).subscribe({
       next: (userData) => {
         this.user = userData;
       },

@@ -7,11 +7,12 @@ import { IAmenity } from '../../models/amenity.model';
 import { IImageList } from '../../models/imagelist.model';
 import { environment } from '../../../environements/environement';
 import { CommonModule } from '@angular/common';
+import { ReservationComponent } from "../../components/reservation/reservation.component";
 
 @Component({
   selector: 'app-annonce-detail',
   standalone: true, 
-  imports: [CommonModule],
+  imports: [CommonModule, ReservationComponent],
   templateUrl: './annonce-detail.component.html',
   styleUrls: ['./annonce-detail.component.css'],
 })

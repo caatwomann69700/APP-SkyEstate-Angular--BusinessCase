@@ -1,0 +1,71 @@
+/* Conteneur global de la barre de réservation */
+.reservation-bar {
+    background-color: #F4F5F5; /* Couleur de fond */
+    padding: 2rem;
+    /* Aucun border-radius */
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titre et zone de prix */
+  .reservation-bar .d-flex {
+    margin-bottom: 1rem;
+  }
+  
+  .reservation-bar h5 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .reservation-bar .price {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Inputs et groupes d'inputs */
+  .form-control {
+    border-radius: 0; /* Pas de border-radius */
+    font-size: 1rem;
+    height: 2.5rem;
+  }
+  
+  .input-group-text.custom-calendar-icon {
+    background-color: transparent;
+    border: none;
+    /* Utilisez ici votre propre style pour l'icône, par exemple en utilisant Bootstrap Icons */
+    font-size: 1.5rem;
+    color: #2076C5;
+  }
+  
+  /* Récapitulatif des montants */
+  .reservation-summary {
+    background-color: #F4F5F5;
+    border: 1px solid #dee2e6;
+    padding: 1rem;
+    border-radius: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Bouton de soumission */
+  .btn-submit {
+    background-color: #2076C5; /* Couleur demandée */
+    border: none;
+    border-radius: 0;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+  }
+  
+  .btn-submit:hover,
+  .btn-submit:focus {
+    background-color: #1866a7;
+    color: #fff;
+  }
+  
+  /* Message en dessous du bouton */
+  .no-charge {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environements/environement';
 import { IUser } from '../models/user.model';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,10 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   // Lire les données d'un utilisateur (Read)
-  getUserData(): Observable<IUser> {
-    return this.http.get<IUser>(`${this.apiUrl}/users/me`);
-  }
+  getUserData(headers: HttpHeaders): Observable<IUser> {
+  return this.http.get<IUser>(`${this.apiUrl}/users/me`, { headers });
+}
+
 
   // Mettre à jour les données d'un utilisateur (Update)
   updateUserData(userId: number, userData: Partial<IUser>): Observable<any> {
