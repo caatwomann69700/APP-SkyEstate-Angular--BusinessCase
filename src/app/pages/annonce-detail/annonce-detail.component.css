@@ -9,26 +9,82 @@ h3 {
 }
 /* 📌 Container des images en grille */
 /* 📌 Container des images : 2 lignes de 3 images */
+/* 📌 Container des images en grille */
 .image-row {
-  display: flex;
-  flex-wrap: wrap; /* Permet de passer à la ligne après 3 images */
+  display: flex; /* Utilise flexbox pour gérer les espaces */
+  flex-wrap: wrap; /* Les images passent à la ligne si nécessaire */
+  justify-content: space-between; /* Ajoute de l'espace égal entre les images */
+  gap: 5px; /* Espacement entre les images */
   width: 100%; /* Prend toute la largeur disponible */
 }
 
-.image-item {
-  width: 33.33%; /* Chaque image prend 1/3 de la largeur */
-  height: auto;
-}
-
 /* 📌 Style des images */
-.image-thumbnail {
-  width: 100%; /* L'image prend toute la largeur de son container */
-  height: 250px; /* Hauteur fixe pour une uniformité */
-  object-fit: cover; /* Remplit l'espace sans déformer */
-  border-radius: 0; /* Pas d'arrondi */
-  display: block; /* Supprime tout espace vide sous l'image */
+.image-item {
+  width: calc(33.33% - 10px); /* Chaque image prend 1/3 de la largeur moins l'espace */
+  height: auto; /* Maintient les proportions */
+  margin-bottom: 10px; /* Ajoute un espace en bas de chaque image */
 }
 
+.image-thumbnail {
+  width: 100%; /* L'image prend toute la largeur de son conteneur */
+  height: 200px; /* Hauteur fixe pour une uniformité */
+  object-fit: cover; /* Remplit l'espace sans déformer */
+  border-radius: 0px; /* Coins légèrement arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  border: 1px solid #ffffff; /* Bordure fine autour des images */
+}
+
+/* 📌 Conteneur des commodités */
+.commodities-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet de s’adapter aux petits écrans */
+  gap: 10px; /* Ajuste l'espacement entre les éléments */
+}
+
+/* 📌 Style de la liste des commodités */
+.commodities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Ajuste l'espacement entre les commodités */
+}
+
+/* 📌 Style des éléments */
+.commodities-list li {
+  display: flex;
+  align-items: center; /* Aligne les icônes avec le texte */
+  font-size: 1.1em;
+  color: #495057;
+  padding: 5px 0; /* Ajoute un léger espacement haut/bas */
+}
+
+/* 📌 Style des icônes */
+.commodities-list li img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  padding: 2px;
+  border: 1px solid #ddd;
+  margin-right: 8px; /* Espacement entre l'icône et le texte */
+}
+
+/* 📌 Responsivité */
+@media (max-width: 768px) {
+  .commodities-container {
+    flex-direction: column; /* Passe en colonne sur mobile */
+  }
+
+  .commodities-list {
+    flex-direction: row;
+    flex-wrap: wrap; /* Permet un retour à la ligne si nécessaire */
+    justify-content: flex-start; /* Alignement à gauche */
+    gap: 10px; /* Ajuste l'espacement entre les commodités */
+  }
+}
 
 h4 { 
   margin-top: 30px;
@@ -66,6 +122,45 @@ p {
   color: #1F1B1B;
   margin-bottom: 10px;
   font-weight: bold;
+}
+/* 📌 Style global pour les sections informations */
+.info-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+  gap: 10px; /* Espacement entre les éléments */
+  font-size: 1.2em;
+  color: #1F1B1B;
+  margin-bottom: 10px;
+}
+
+/* 📌 Style des icônes */
+.info-container .info-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 8px; /* Espacement entre l'icône et le texte */
+}
+
+/* 📌 Style des séparateurs */
+.info-container .separator {
+  font-weight: bold;
+  color: #6c757d; /* Couleur subtile */
+  margin: 0 8px; /* Espacement autour du séparateur */
+}
+
+/* 📌 Style du texte */
+.info-container span {
+  font-weight: 500;
+}
+
+/* 📌 Responsivité */
+@media (max-width: 768px) {
+  .info-container {
+    flex-direction: column; /* Passe les éléments en colonne sur mobile */
+    align-items: flex-start; /* Alignement à gauche */
+    gap: 5px; /* Espacement réduit pour mobile */
+  }
 }
 
 /* Alignement des informations Adresse, Ville et Code Postal */

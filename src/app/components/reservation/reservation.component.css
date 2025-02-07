@@ -1,10 +1,14 @@
 /* Conteneur global de la barre de réservation */
+
+
 .reservation-bar {
     background-color: #F4F5F5; /* Couleur de fond */
     padding: 2rem;
     /* Aucun border-radius */
     border-radius: 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    
   }
   
   /* Titre et zone de prix */

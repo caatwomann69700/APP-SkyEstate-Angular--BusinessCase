@@ -20,26 +20,28 @@
   <p>{{ annonce?.description }}</p>
 
   <!-- 📌 Informations sur la localisation -->
-  <div class="location-info">
-    <img src="assets/Icones/location.png" alt="Adresse" class="info-icon">
-    <span class="address">{{ annonce?.location }}</span>
-    <span class="separator">|</span>
-    <span class="city">{{ annonce?.city }}</span>
-    <span class="separator">|</span>
-    <span class="postal-code">{{ annonce?.postalCode }}</span>
-  </div>
+  <!-- 📌 Informations sur la localisation -->
+<div class="info-container">
+  <img src="assets/Icones/location.png" alt="Adresse" class="info-icon">
+  <span class="address">{{ annonce?.location }}</span>
+  <span class="separator">|</span>
+  <span class="city">{{ annonce?.city }}</span>
+  <span class="separator">|</span>
+  <span class="postal-code">{{ annonce?.postalCode }}</span>
+</div>
 
-  <!-- 📌 Informations sur les occupants -->
-  <div class="occupants-info">
-    <img src="assets/Icones/person.png" alt="Max Occupants" class="info-icon">
-    <span class="max-occupants">{{ annonce?.maxOccupants }} occupant(s)</span>
-  </div>
+<!-- 📌 Informations sur les occupants -->
+<div class="info-container">
+  <img src="assets/Icones/person.png" alt="Max Occupants" class="info-icon">
+  <span class="max-occupants">{{ annonce?.maxOccupants }} occupant(s)</span>
+</div>
 
-  <!-- 📌 Informations sur la surface -->
-  <div class="occupants-info">
-    <img src="assets/Icones/extension.png" alt="Surface" class="info-icon">
-    <span class="max-occupants">{{ annonce?.surface }} m²</span>
-  </div>
+<!-- 📌 Informations sur la surface -->
+<div class="info-container">
+  <img src="assets/Icones/extension.png" alt="Surface" class="info-icon">
+  <span class="max-occupants">{{ annonce?.surface }}</span>
+</div>
+
  
   <!-- 📌 Commodités -->
   <h4>Les Commodités de ce logement</h4>
