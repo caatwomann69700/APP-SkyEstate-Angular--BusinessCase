@@ -1,0 +1,229 @@
+/* Bouton flottant rond */
+.accessibility-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: #f8f9fa;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accessibility-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Panneau d'accessibilité */
+.accessibility-panel {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    width: 510px;
+    background: white;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+}
+
+/* Barre bleue en haut */
+.accessibility-header {
+    background-color: #2076C5;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+/* Ajustement du texte "Accessibilité" */
+.panel-title {
+    font-size: 16px;
+    
+    margin-left: 5px;
+}
+
+/* Bouton de fermeture */
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    margin-left: auto; 
+}
+
+.close-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Style pour les boutons du panneau */
+button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+}
+
+/* Mode sombre */
+.dark-mode {
+    background-color: #121212 !important;
+    color: white !important;
+}
+
+.dark-mode .accessibility-panel {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode .btn {
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+}
+
+/* Mode contraste élevé */
+.high-contrast {
+    filter: contrast(200%);
+}
+
+
+
+/* Style des boutons */
+button {
+    background-color: #FFF; /* Fond blanc */
+    border: 2px solid #2076C5; /* Bordure bleue */
+    color: #333; /* Texte noir */
+    padding: 10px 15px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: none;
+    outline: none;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 0;
+}
+
+button i {
+    font-size: 18px;
+    margin-left: auto; 
+}
+
+.btn-dark {
+    background-color: #000 !important; 
+    color: #FFF !important;
+}
+
+
+.btn-dark:hover {
+    background-color: #333 !important; 
+}
+
+/* ✅ Responsive Design pour Mobile */
+@media (max-width: 768px) {
+    /* Bouton flottant */
+    .accessibility-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .accessibility-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Panneau d'accessibilité */
+    .accessibility-panel {
+        width: 84%; 
+        right: 8%; 
+        bottom: 80px; 
+        padding: 10px;
+    }
+
+    /* Texte "Accessibilité" */
+    .panel-title {
+        font-size: 14px; 
+    }
+
+    /* Barre bleue en haut */
+    .accessibility-header {
+        height: 35px;
+        padding: 6px 10px;
+    }
+
+    /* Bouton de fermeture */
+    .close-btn img {
+        width: 16px; 
+        height: 16px;
+    }
+
+    /* Styles des boutons */
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button i {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Bouton flottant */
+    .accessibility-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .accessibility-btn img {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* Panneau d'accessibilité */
+    .accessibility-panel {
+        width: 95%; 
+        right: 2.5%;
+        bottom: 70px;
+        padding: 8px;
+    }
+
+    /* Texte "Accessibilité" */
+    .panel-title {
+        font-size: 12px;
+    }
+
+    /* Barre bleue en haut */
+    .accessibility-header {
+        height: 30px;
+        padding: 5px 8px;
+    }
+
+    /* Boutons */
+    button {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    button i {
+        font-size: 14px;
+    }
+}

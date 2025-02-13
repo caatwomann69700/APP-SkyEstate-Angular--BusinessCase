@@ -13,12 +13,14 @@
           </div>
           <div class="card-footer d-flex justify-content-between align-items-center">
             <span class="text-muted">{{ annonce.price }} €</span>
-            <button class="btn btn-primary" [routerLink]="'/annonces/' + annonce.id">
-              Réserver
+            <button class="btn btn-primary" (click)="goToReservation(annonce.id)">
+                Réserver
             </button>
+        </div>
+        
           </div>
         </div>
       </div>
-    </div>
+
   </section>
   

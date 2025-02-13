@@ -35,13 +35,13 @@ export class NavbarComponent {
 texts: string[] = [
   "Bienvenue sur Sky Estate",
   "Avec Sky Estate vous trouviez le logement parfait pour vous",
-  "Connectez-vous pour créer un compte chez nous et pouvoir mettre vos appartements en location"
+  "Connectez-vous pour louer ou mettre en location vos logements"
 ];
-textIndex: number = 0; // Index de la phrase actuelle
-charIndex: number = 0; // Index du caractère actuel
-typingSpeed: number = 100; // Vitesse d'écriture (en ms)
-displayDuration: number = 2000; // Durée d'affichage avant de changer de phrase
-displayedText: string = ''; // Texte affiché dans la pre-navbar
+textIndex: number = 0;
+charIndex: number = 0; 
+typingSpeed: number = 100; 
+displayDuration: number = 2000; 
+displayedText: string = ''; 
 
 ngOnInit(): void {
   this.typeWriter();
@@ -79,6 +79,8 @@ isAdmin(): boolean {
 isUser(): boolean {
   return this.authService.isUser();
 }
+
+
 
 logout(): void {
   this.authService.logout();

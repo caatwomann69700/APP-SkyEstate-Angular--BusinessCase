@@ -1,9 +1,18 @@
 <!-- Pre-Navbar -->
+
 <div class="pre-navbar">
-  <div class="container d-flex justify-content-between align-items-center">
+  <div class="container d-flex justify-content-between align-items-left">
     <div id="typewriter-text">{{ displayedText }}</div>
+
+    <!-- Icone de messagerie affichée seulement si l'utilisateur est connecté -->
+    <div *ngIf="isLoggedIn()">
+      <a routerLink="/messagerie">
+        <img src="assets/images/icons8-mail-24.png" alt="Messagerie">
+      </a>
+    </div>
   </div>
 </div>
+
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-light">

@@ -1,0 +1,39 @@
+<!-- Bouton flottant pour ouvrir le panneau -->
+<button class="accessibility-btn" (click)="togglePanel()">
+    <img src="assets/Icones/icons8-accessibility-32 (1).png" alt="Accessibilité">
+  </button>
+  
+  <!-- Panneau d'accessibilité -->
+  <div class="accessibility-panel" *ngIf="isPanelOpen">
+    <div class="accessibility-header">
+      <span class="panel-title">Accessibilité</span>
+      <button class="close-btn" (click)="closePanel()">
+        <img src="assets/Icones/icons8-close-48.png" alt="Fermer">
+      </button>
+    </div>
+  
+    <button class="btn btn-dark" (click)="toggleDarkMode()">
+        <span> {{ darkMode ? 'Désactiver Mode Sombre' : 'Activer Mode Sombre' }} </span>
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <button class="btn btn-primary" (click)="increaseTextSize()">
+        <span>Augmenter Texte</span>
+        <i class="your-custom-icon"></i>
+    </button>
+
+    <button class="btn btn-secondary" (click)="decreaseTextSize()">
+        <span>Réduire Texte</span>
+        <i class="your-custom-icon"></i>
+    </button>
+
+    <button class="btn btn-warning" (click)="toggleHighContrast()">
+        <span>Mode Contraste</span>
+        <i class="your-custom-icon"></i>
+    </button>
+
+    <button class="btn btn-danger reset-btn" (click)="resetAccessibility()">
+        <span>Réinitialiser</span>
+        <i class="your-reset-icon"></i>
+    </button>
+</div>
