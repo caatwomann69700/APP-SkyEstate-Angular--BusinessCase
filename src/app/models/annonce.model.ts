@@ -1,5 +1,6 @@
 import { IImage } from "./image.model";
 import { IImageList } from "./imagelist.model";
+import { IUser } from "./user.model";
 
 export interface IAnnonce {
   id: number;
@@ -13,9 +14,11 @@ export interface IAnnonce {
   maxOccupants: number;
   createdAt: string;
   updatedAt: string;
-  image?: IImage; // ✅ Correction : image est un objet, pas une chaîne de texte
+  image?: IImage; 
   category?: { id: number; name: string };
   amenities: string[];
   imagesList?: IImageList[];
-  imageUrl?: string; // ✅ URL complète de l'image
+  imageUrl?: string; 
+  user: IUser;
 }
+

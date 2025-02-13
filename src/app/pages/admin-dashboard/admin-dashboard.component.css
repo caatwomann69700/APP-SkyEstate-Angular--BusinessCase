@@ -1,0 +1,42 @@
+.admin-dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 300px;
+    background: #f8f9fa;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    height: 100%;
+    top: 100px; 
+    left: 0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 60px 0px 0px 100px;
+  }
+  
+  .sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .sidebar ul li a:hover, .sidebar ul li a.active {
+    background: #2076C5;
+    padding-left: 10px;
+  }
+  
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+  }
+  

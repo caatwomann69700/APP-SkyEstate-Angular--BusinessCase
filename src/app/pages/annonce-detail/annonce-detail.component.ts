@@ -8,11 +8,12 @@ import { IImageList } from '../../models/imagelist.model';
 import { environment } from '../../../environements/environement';
 import { CommonModule } from '@angular/common';
 import { ReservationComponent } from "../../components/reservation/reservation.component";
+import { CoupDeCoeurComponent } from "../../components/coup-de-coeur/coup-de-coeur.component";
 
 @Component({
   selector: 'app-annonce-detail',
   standalone: true, 
-  imports: [CommonModule, ReservationComponent],
+  imports: [CommonModule, ReservationComponent, CoupDeCoeurComponent],
   templateUrl: './annonce-detail.component.html',
   styleUrls: ['./annonce-detail.component.css'],
 })

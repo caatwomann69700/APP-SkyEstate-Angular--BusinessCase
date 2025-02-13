@@ -1,75 +1,277 @@
-/* Conteneur global de la barre de réservation */
-
-
+/* Réinitialiser les styles par défaut pour avoir un contrôle complet */
+/* Style général pour la barre de réservation */
 .reservation-bar {
-    background-color: #F4F5F5; /* Couleur de fond */
-    padding: 2rem;
-    /* Aucun border-radius */
-    border-radius: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    
-    
+  position: absolute;
+  top: 105%; /* Déplacer de haut en bas en changeant cette valeur */
+  left: 75%; /* Centrer horizontalement, ajustez selon les besoins */
+  transform: translateX(-50%); /* Centrage précis horizontalement */
+  width: 80%; /* Largeur en pourcentage du conteneur parent ou 'vw' pour la largeur de la vue */
+  max-width: 450px; /* Largeur maximale */
+  min-height: 200px; /* Hauteur minimale, ajustez selon les besoins */
+  padding: 20px;
+  margin-bottom: 30px; /* Espace en dessous de la barre de réservation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #F4F5F5;
+  border-radius: 0;
+  box-sizing: border-box; /* Inclure padding et border dans la largeur/hauteur */
+}
+
+.container {
+  padding-bottom: 100px; /* Espace en bas du conteneur */
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 768px) {
+  .reservation-bar {
+      width: 100%; /* Plus large sur les petits écrans */
+      top: 300%; /* Position plus haute ou basse selon la nécessité */
+      left: 45%; /* Centrage */
+      transform: translateX(-50%);
   }
-  
-  /* Titre et zone de prix */
-  .reservation-bar .d-flex {
-    margin-bottom: 1rem;
+}
+/* Style spécifique pour le titre h5 */
+.reservation-bar h5 {
+  font-size: 24px; /* Taille de la police pour le h5 */
+  color: #000; /* Couleur de texte pour le h5 */
+  margin-bottom: 20px; /* Espacement après le h5 */
+}
+
+/* Alignement des prix à droite */
+.price-details div, .total {
+  display: flex;
+  justify-content: space-between; /* Alignement des éléments à droite */
+  margin-bottom: 10px; /* Espacement entre les éléments */
+}
+
+/* Styles pour le bouton de réservation */
+.btn-reserve {
+  background-color: #2076C5; /* Couleur bleue pour le bouton */
+  color: white;
+  border: none;
+  width: auto; /* Largeur ajustée pour s'adapter au texte */
+  padding: 10px 20px; /* Padding ajusté pour une meilleure apparence */
+  font-size: 16px; /* Taille de police pour le bouton */
+  border-radius: 0; /* Supprime les bordures arrondies */
+  cursor: pointer;
+}
+
+.btn-reserve:hover {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Ajout de styles pour tous les span pour assurer la cohérence de l'alignement et de la couleur */
+.reservation-bar span {
+  color: #333; /* Assure que la couleur de texte des span est uniforme */
+}
+
+/* Styles supplémentaires pour un meilleur alignement et visibilité */
+.input-group, #occupants, .price-details, .total, p {
+  margin-bottom: 15px; /* Espacement uniforme entre les éléments */
+}
+
+.input-group-text, .calendar-icon {
+  justify-content: center; /* Centrage de l'icône de calendrier */
+  align-items: center;
+  width: 45px; /* Largeur fixe pour l'icône */
+}
+
+#occupants, .input-group .form-control {
+  border: 1px solid #ced4da; /* Bordure pour les champs de saisie */
+  background-color: #fff; /* Fond blanc pour les champs de saisie */
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.input-group, #occupants, .btn-reserve, .price-details, .total, p {
+  margin-bottom: 15px; /* Espacement uniforme entre les éléments */
+}
+
+.input-group .form-control, #occupants {
+  height: 40px; /* Hauteur uniforme pour tous les éléments de formulaire */
+  border-radius: 0; /* Supprime les bordures arrondies */
+}
+
+.input-group .form-control {
+  width: calc(100% - 45px); /* Ajustement pour l'icône, en conservant l'espace pour l'icône */
+}
+
+.input-group-text {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 45px; /* Largeur fixe pour l'icône */
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-icon {
+  width: 20px; /* Taille de l'icône ajustée pour un meilleur alignement */
+  height: auto;
+  cursor: pointer;
+}
+
+#occupants {
+  width: 100%; /* Pleine largeur pour correspondre aux autres champs */
+  border: 1px solid #ced4da;
+  background-color: #fff;
+}
+
+.btn-reserve {
+  width: auto; /* Largeur automatique pour s'adapter au texte */
+  padding: 10px 20px; /* Padding ajusté pour une meilleure apparence */
+  font-size: 16px; /* Taille de police pour le bouton */
+}
+
+/* Espacement vertical supplémentaire pour le bouton et le paragraphe */
+.btn-reserve, p {
+  margin-top: 15px;
+}
+/* Style général de la barre de réservation */
+.reservation-bar {
+  background-color: #F4F5F5; /* Couleur grise pour le fond */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  margin: 20px auto;
+  border-radius: 0; /* Supprime les bordures arrondies */
+}
+
+/* Réinitialiser les styles par défaut pour avoir un contrôle complet */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.input-group, #occupants, .btn-reserve, .price-details, .total, p {
+  margin-bottom: 15px; /* Espacement uniforme entre les éléments */
+}
+
+.input-group .form-control, #occupants {
+  height: 40px; /* Hauteur uniforme pour tous les éléments de formulaire */
+  border-radius: 0; /* Supprime les bordures arrondies */
+}
+
+.input-group .form-control {
+  width: calc(100% - 45px); /* Ajustement pour l'icône, en conservant l'espace pour l'icône */
+}
+
+.input-group-text {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 45px; /* Largeur fixe pour l'icône */
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-icon {
+  width: 20px; /* Taille de l'icône ajustée pour un meilleur alignement */
+  height: auto;
+  cursor: pointer;
+}
+
+#occupants {
+  width: 100%; /* Pleine largeur pour correspondre aux autres champs */
+  border: 1px solid #ced4da;
+  background-color: #fff;
+}
+
+.btn-reserve {
+  background-color: #2076C5; /* Couleur bleue pour le bouton */
+  color: white;
+  border: none;
+  width: 180px; /* Largeur automatique pour s'adapter au texte */
+  padding: 10px 20px; /* Padding ajusté pour une meilleure apparence */
+  font-size: 16px; /* Taille de police pour le bouton */
+  border-radius: 0; /* Supprime les bordures arrondies */
+}
+
+.btn-reserve:hover {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Espacement vertical supplémentaire pour le bouton et le paragraphe */
+.btn-reserve, p {
+  margin-top: 15px;
+}
+
+/* Alignement des span à droite */
+.input-group-text {
+  justify-content: flex-end;
+}
+/* Media Queries pour les appareils mobiles */
+@media (max-width: 768px) {
+  .reservation-bar {
+      padding: 15px;
+      max-width: 100%;
+      margin: 10px;
   }
-  
+
+  .input-group .form-control, #occupants {
+      width: 100%; /* Ajustement pour les petits écrans */
+  }
+
+  .input-group, #occupants, .btn-reserve, .price-details, .total, p {
+      margin-bottom: 10px;
+  }
+
+  .btn-reserve {
+      width: auto; /* Ajustement pour le bouton sur mobile */
+  }
+
   .reservation-bar h5 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #333;
+      font-size: 20px; /* Taille de police réduite pour les titres sur mobile */
   }
+}
+
+
+.highlight-box {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  top: 175%; /* Déplacer de haut en bas en changeant cette valeur */
+  left: 58%; /* Centrer horizontalement, ajustez selon les besoins */
+  padding: 20px;
+  background-color: #F4F5F5; /* Couleur de fond du carré */
   
-  .reservation-bar .price {
-    font-size: 1rem;
-    color: #333;
+  margin: 30px auto 0 auto; /* Espacement en haut et centrage */
+  width: 80%; /* Assorti à la largeur de la barre de réservation */
+  max-width: 450px; /* Assorti à la largeur maximale de la barre de réservation */
+  min-height: 50px;
+}
+
+.highlight-icon {
+  width: 30px; /* Taille de l'icône */
+  height: 30px;
+  margin-right: 20px; /* Espacement entre l'icône et le texte */
+}
+
+.highlight-text {
+  flex-grow: 1;
+}
+
+.highlight-title {
+  font-weight: bold; /* Texte en gras pour le titre */
+  margin-bottom: 5px; /* Espacement entre le titre et le texte descriptif */
+}
+
+/* Adaptations pour les petits écrans, si nécessaire */
+@media (max-width: 768px) {
+  .highlight-box {
+      flex-direction: column;
+      padding: 15px;
   }
-  
-  /* Inputs et groupes d'inputs */
-  .form-control {
-    border-radius: 0; /* Pas de border-radius */
-    font-size: 1rem;
-    height: 2.5rem;
+
+  .highlight-icon {
+      margin-bottom: 10px;
   }
-  
-  .input-group-text.custom-calendar-icon {
-    background-color: transparent;
-    border: none;
-    /* Utilisez ici votre propre style pour l'icône, par exemple en utilisant Bootstrap Icons */
-    font-size: 1.5rem;
-    color: #2076C5;
-  }
-  
-  /* Récapitulatif des montants */
-  .reservation-summary {
-    background-color: #F4F5F5;
-    border: 1px solid #dee2e6;
-    padding: 1rem;
-    border-radius: 0;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  /* Bouton de soumission */
-  .btn-submit {
-    background-color: #2076C5; /* Couleur demandée */
-    border: none;
-    border-radius: 0;
-    font-size: 1.1rem;
-    padding: 0.75rem;
-  }
-  
-  .btn-submit:hover,
-  .btn-submit:focus {
-    background-color: #1866a7;
-    color: #fff;
-  }
-  
-  /* Message en dessous du bouton */
-  .no-charge {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
+}

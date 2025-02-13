@@ -7,8 +7,7 @@
         <div class="card" [ngClass]="{ 'card-right-wrapper': i === categories.length - 1 }">
           <div class="card-icon-wrapper">
             <img [src]="environment.baseUrl + '/' + environment.assetsImages + category.image?.name" 
-     alt="{{ category.name }}" 
-     class="card-img-top"/>
+              alt="{{ category.name }}"class="card-img-top"/>
           </div>
           <h5 class="card-title">{{ category.name }}</h5>
           <p class="card-text">{{ category.description }}</p>

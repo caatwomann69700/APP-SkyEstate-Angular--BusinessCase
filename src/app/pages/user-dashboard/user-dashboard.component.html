@@ -1,28 +1,74 @@
-<p>user-dashboard works!</p>
-<p>user-dashboard works!</p>
-<p>user-dashboard works!</p>
-<p>user-dashboard works!</p>
-<h3>Modifier vos coordonnées</h3>
+<div class="container">
+  <h2>Modifier vos coordonnées</h2>
 
-<p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
-<p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  <form *ngIf="user" class="register-form" #userForm="ngForm" (ngSubmit)="onUpdate(userForm)">
+    
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstname">Prénom</label>
+        <input type="text" id="firstname" [(ngModel)]="user.firstname" name="firstname" required>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Nom</label>
+        <input type="text" id="lastname" [(ngModel)]="user.lastname" name="lastname" required>
+      </div>
+    </div>
 
-<form *ngIf="user" #userForm="ngForm" (ngSubmit)="onUpdate(userForm)">
-  
-  <label for="firstname">Prénom :</label>
-  <input id="firstname" type="text" [(ngModel)]="user.firstname" name="firstname" required />
-  
-  <label for="lastname">Nom :</label>
-  <input id="lastname" type="text" [(ngModel)]="user.lastname" name="lastname" required />
-  
-  <label for="email">Email :</label>
-  <input id="email" type="email" [(ngModel)]="user.email" name="email" required readonly />
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="user.email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Téléphone</label>
+        <input type="text" id="phone" [(ngModel)]="user.phone" name="phone">
+      </div>
+    </div>
 
-  <label for="phone">Téléphone :</label>
-  <input id="phone" type="text" [(ngModel)]="user.phone" name="phone" />
+    <div class="form-row">
+      <div class="form-group">
+        <label for="birthdate">Date de naissance</label>
+        <input type="date" id="birthdate" [(ngModel)]="user.birthdate" name="birthdate">
+      </div>
+      <div class="form-group">
+        <label for="gender">Genre</label>
+        <select id="gender" [(ngModel)]="user.gender" name="gender">
+          <option value="Male">Homme</option>
+          <option value="Female">Femme</option>
+          <option value="Other">Autre</option>
+        </select>
+      </div>
+    </div>
 
-  <label for="address">Adresse :</label>
-  <input id="address" type="text" [(ngModel)]="user.address" name="address" />
+    <div class="form-row">
+      <div class="form-group">
+        <label for="address">Adresse</label>
+        <input type="text" id="address" [(ngModel)]="user.address" name="address">
+      </div>
+    </div>
 
-  <button type="submit">Enregistrer</button>
-</form>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="city">Ville</label>
+        <input type="text" id="city" [(ngModel)]="user.city" name="city">
+      </div>
+      <div class="form-group">
+        <label for="country">Pays</label>
+        <input type="text" id="country" [(ngModel)]="user.country" name="country">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="newPassword">Nouveau mot de passe</label>
+        <input type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword">
+      </div>
+    </div>
+
+    <button type="submit">Mettre à jour</button>
+
+    <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  </form>
+</div>

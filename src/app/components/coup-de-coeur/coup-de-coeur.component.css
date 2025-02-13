@@ -1,0 +1,28 @@
+
+
+
+.progress {
+    height: 10px;
+    background-color: #F4F5F5;
+    margin-top: 4px;
+}
+
+.progress-bar {
+    background-color: #333;
+}
+
+.col-6 {
+    padding-right: 15px;
+}
+
+.icon-size {
+    width: 30px; /* Taille réduite pour toutes les icônes */
+    height: 30px; /* Hauteur réduite */
+    display: block; /* Assure que l'image est traitée comme un bloc */
+    margin: 0 auto; /* Centrage horizontal */
+}
+
+.text-center {
+    text-align: center; /* Centrage du texte */
+    color: #333;
+}

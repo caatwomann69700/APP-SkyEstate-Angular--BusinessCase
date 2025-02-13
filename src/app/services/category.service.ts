@@ -9,14 +9,13 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiUrl = `${environment.apiBaseUrl}/categories`; // Utilisation de l'URL du fichier environnement
-
+  private apiUrl = `${environment.apiBaseUrl}/categories`; 
   constructor(private http: HttpClient) {}
 
   // Récupérer toutes les catégories
   getCategories(): Observable<ICategory[]> {
     return this.http.get<{ member: ICategory[] }>(`${this.apiUrl}`).pipe(
-      map(response => response.member) // 🔥 Extrait le tableau `member`
+      map(response => response.member) 
     );
   }
 

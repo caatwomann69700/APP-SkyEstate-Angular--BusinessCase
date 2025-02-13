@@ -1,16 +1,16 @@
 export interface IUser {
-    id?: number; // Optionnel car il peut être null
+    id?: number; 
     email: string;
     roles: string[];
-    password?: string; // Optionnel, généralement non envoyé côté client
+    password?: string; 
     lastname: string;
     firstname: string;
-    birthdate?: string; // Format ISO string pour Date
+    birthdate?: string; 
     phone?: string;
     gender?: string;
     address?: string;
     city?: string;
     country?: string;
-    createdAt?: string; // Format ISO string pour Date
-    updatedAt?: string; // Format ISO string pour Date
+    createdAt?: string; 
+    updatedAt?: string; 
   }

@@ -1,68 +1,44 @@
-<div class="container">
-  <div class="row justify-content-end">
-    <div class="col-md-6 p-0">
-      <div class="reservation-bar p-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <!-- Titre à gauche -->
-          <h5 class="mb-0">Réservez votre logement</h5>
-          <!-- Prix affiché à droite -->
-          <div class="price text-end">
-            <span>{{ price | currency }}</span>
-          </div>
-        </div>
-        <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
-          <!-- Ligne 1 : Dates côte à côte -->
-          <div class="row g-2 mb-3">
-            <div class="col">
-              <label for="startDate" class="form-label">Date d'arrivée</label>
+<div class="container mt-5">
+  <div class="reservation-bar">
+      <h5>118 € Par jour</h5>
+      <div class="row row-cols-2">
+          <div class="col">
               <div class="input-group">
-                <input type="date" id="startDate" formControlName="startDate" class="form-control">
-                <!-- Votre propre icône pour le calendrier -->
-                <span class="input-group-text custom-calendar-icon">
-                  <!-- Par exemple, utiliser une icône SVG ou FontAwesome personnalisée -->
-                  <i class="bi bi-calendar"></i>
-                </span>
+                  <input type="text" ngbDatepicker #arrivalDp="ngbDatepicker" class="form-control" id="arrival-display" placeholder="Arrivée" (click)="arrivalDp.toggle()">
+                  <span class="input-group-text" (click)="arrivalDp.toggle()">
+                      <img src="assets/images/icons8-calendrier-50.png" alt="Calendrier" class="calendar-icon">
+                  </span>
               </div>
-            </div>
-            <div class="col">
-              <label for="endDate" class="form-label">Date de départ</label>
+          </div>
+          <div class="col">
               <div class="input-group">
-                <input type="date" id="endDate" formControlName="endDate" class="form-control">
-                <span class="input-group-text custom-calendar-icon">
-                  <i class="bi bi-calendar"></i>
-                </span>
+                  <input type="text" ngbDatepicker #departureDp="ngbDatepicker" class="form-control" id="departure-display" placeholder="Départ" (click)="departureDp.toggle()">
+                  <span class="input-group-text" (click)="departureDp.toggle()">
+                      <img src="assets/images/icons8-calendrier-50.png" alt="Calendrier" class="calendar-icon">
+                  </span>
               </div>
-            </div>
           </div>
-          
-          <!-- Ligne 2 : Nombre d'occupants sur la même largeur -->
-          <div class="mb-3">
-            <label for="occupants" class="form-label">Nombre d'occupants</label>
-            <input type="number" id="occupants" formControlName="occupants" class="form-control" min="1">
-          </div>
-          
-          <!-- Section récapitulative des montants -->
-          <div class="reservation-summary mb-3 p-3">
-            <div class="row">
-              <div class="col-6">Taxes (15%)</div>
-              <div class="col-6 text-end">{{ taxes | currency }}</div>
-            </div>
-            <div class="row">
-              <div class="col-6">Frais de service (10%)</div>
-              <div class="col-6 text-end">{{ serviceFees | currency }}</div>
-            </div>
-            <div class="row fw-bold">
-              <div class="col-6">Total</div>
-              <div class="col-6 text-end">{{ totalAmount | currency }}</div>
-            </div>
-          </div>
-          
-          <!-- Bouton Réserver qui occupe toute la largeur -->
-          <button type="submit" class="btn btn-submit w-100">Réserver</button>
-        </form>
-        <!-- Message centré sous le bouton -->
-        <p class="text-center mt-3 no-charge">Aucun montant ne vous sera débité pour le moment</p>
       </div>
-    </div>
+      <div class="mb-3">
+          <select id="occupants" class="form-control">
+              <option value="1">1 Occupant</option>
+              <option value="2">2 Occupants</option>
+              <option value="3">3 Occupants</option>
+              <option value="4">4 Occupants</option>
+          </select>
+      </div>
+      <div class="price-details">
+          <div><strong>Frais de service Sky Estate</strong> <span>112 €</span></div>
+          <div><strong>Taxes</strong> <span>20 €</span></div>
+      </div>
+      <div class="total">
+          <strong>Total</strong> <span>745 €</span>
+      </div>
+      <button class="btn-reserve">Réserver</button>
+      <p>Aucun montant ne vous sera débité pour le moment</p>
   </div>
 </div>
+<!-- annonces.component.html -->
+
+
+

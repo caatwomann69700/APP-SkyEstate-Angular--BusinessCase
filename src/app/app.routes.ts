@@ -13,6 +13,7 @@ import { FilteredAnnoncesComponent } from './pages/filtered-annonces/filtered-an
 
 
 
+
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
@@ -22,10 +23,10 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'mentions-legales', component: LegalMentionsComponent },
     { path: 'fonctionnement', component: FonctionnementComponent },
-    { path: 'register', component: RegisterComponent }, // Pas de protection ici
-    { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [AuthGuard] }, // Protégé
-    { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] }, // Protégé
-    { path: '**', redirectTo: '/login' },  // Pour les routes inconnues
+    { path: 'register', component: RegisterComponent }, 
+    { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [AuthGuard] }, 
+    { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
+    { path: '**', redirectTo: '/login' }, 
   ];
   
   

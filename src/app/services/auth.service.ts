@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from '../../environements/environement';
 import { IUser } from '../models/user.model';
-import { Router } from '@angular/router'; // 🟢 Import du Router
+import { Router } from '@angular/router'; 
 import { IRegisterResponse } from '../models/register-response.model';
-import { HttpHeaders } from '@angular/common/http';
-
 
 interface ICredentials {
   email: string;
@@ -29,15 +27,16 @@ interface IAuthResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = environment.apiBaseUrl;
+  private apiUrl = environment.apiBaseUrl; // ✅ Correction ici
 
-  constructor(private http: HttpClient, private router: Router) {} // 🟢 Injection du Router
+  constructor(private http: HttpClient, private router: Router) {} 
 
   login(credentials: ICredentials): Observable<IAuthResponse> {
-    return this.http.post<IAuthResponse>(`${this.apiUrl}/login_check`, credentials, { withCredentials: true })
+    return this.http.post<IAuthResponse>(`${this.apiUrl}/login_check`, credentials,
+       { withCredentials: true })
       .pipe(
         tap(response => {
-          if (response.user) {
+          if (response.token) {
             this.setToken(response.token);
             this.setUser(response.user);
             console.log("✅ Utilisateur stocké :", response.user);
@@ -47,23 +46,28 @@ export class AuthService {
         })
       );
   }
-  // ✅ Ajouter l'en-tête Authorization
+
   getUserData(): Observable<IUser> {
     const token = this.getToken();
     if (!token) {
       console.error("🚨 Aucun token trouvé !");
       return throwError(() => new Error("Aucun token trouvé"));
     }
-  
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+
+    console.log("📡 Envoi de la requête GET vers :", `${this.apiUrl}/users/me`); // ✅ Vérifier l'URL correcte
+
     return this.http.get<IUser>(`${this.apiUrl}/users/me`, { headers });
   }
-  
+
   logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     console.log("🚪 Déconnexion réussie. Redirection vers login.");
-    this.router.navigate(['/login']); // 🟢 Ajout de la redirection vers la page de connexion
+    this.router.navigate(['/login']); 
   }
 
   setToken(token: string): void {
@@ -118,6 +122,4 @@ export class AuthService {
   register(userData: IUser): Observable<IRegisterResponse> {
     return this.http.post<IRegisterResponse>(`${this.apiUrl}/register`, userData);
   }
-  
-  
 }

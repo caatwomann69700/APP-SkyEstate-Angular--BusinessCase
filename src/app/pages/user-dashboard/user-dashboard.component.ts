@@ -15,9 +15,9 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class UserDashboardComponent implements OnInit {
   user: IUser | null = null;
+  newPassword: string = '';
   successMessage: string = '';
   errorMessage: string = '';
-
   constructor(private userService: UserService, private authService: AuthService) {}
 
   ngOnInit(): void {
@@ -25,31 +25,39 @@ export class UserDashboardComponent implements OnInit {
   }
 
   loadUserData(): void {
-    const token = this.authService.getToken();
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-  
-    this.userService.getUserData(headers).subscribe({
-      next: (userData) => {
-        this.user = userData;
+    this.userService.getUserProfile().subscribe({
+      next: (data) => {
+        console.log("Utilisateur récupéré :", data);
+        this.user = data;
       },
       error: (err) => {
-        console.error("❌ Erreur lors du chargement des données utilisateur :", err);
-        this.errorMessage = "⚠️ Vous devez être connecté pour voir votre profil.";
+        console.error("❌ Erreur lors de la récupération du profil :", err);
+        this.errorMessage = "⚠️ Impossible de récupérer les informations de l'utilisateur.";
       }
     });
   }
+  
 
   onUpdate(form: NgForm): void {
     if (!this.user) return;
 
-    this.userService.updateUserData(this.user.id!, this.user).subscribe({
-      next: () => {
-        this.successMessage = "✅ Coordonnées mises à jour avec succès.";
-      },
-      error: (err) => {
-        console.error("❌ Erreur lors de la mise à jour :", err);
-        this.errorMessage = "⚠️ Une erreur est survenue, veuillez réessayer.";
-      }
+    const updatedData: Partial<IUser> = { ...this.user };
+
+    // Vérifier si un mot de passe est fourni avant de l'envoyer
+    if (this.newPassword.trim()) {
+        updatedData.password = this.newPassword.trim();
+    }
+
+    this.userService.updateUserData(this.user.id!, updatedData).subscribe({
+        next: () => {
+            this.successMessage = "✅ Coordonnées mises à jour avec succès.";
+            this.newPassword = ''; // Réinitialiser le champ mot de passe après modification
+        },
+        error: (err) => {
+            console.error("❌ Erreur lors de la mise à jour :", err);
+            this.errorMessage = "⚠️ Une erreur est survenue, veuillez réessayer.";
+        }
     });
-  }
+}
+
 }

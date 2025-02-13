@@ -27,7 +27,7 @@ body {
   .card-icon-wrapper {
     width: 80px;
     height: 80px;
-    margin: 0 auto 20px; /* Ajoute un espace en dessous de l'image */
+    margin: 0 auto 20px; 
     background-color: #f8f9fa;
     border-radius: 50%;
     display: flex;
@@ -36,8 +36,8 @@ body {
   }
   
   .card-icon-wrapper img {
-    width: 70%; /* Réduit la taille de l'icône à 50% du conteneur */
-    height: auto; /* Maintient les proportions de l'image */
+    width: 70%; 
+    height: auto; 
   }
   
   .card-title {

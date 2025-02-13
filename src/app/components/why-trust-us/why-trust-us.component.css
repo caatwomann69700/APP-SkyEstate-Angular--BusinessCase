@@ -2,7 +2,8 @@
     font-family: Arial, sans-serif;
 }
 .section-container {
-    margin-bottom: 50px; /* Ajustez la valeur pour définir l'espace souhaité */
+    margin-bottom: 100px;
+    /* Ajoute un espace sous la section */ /* Ajustez la valeur pour définir l'espace souhaité */
 }
 
 .section-title {
@@ -19,7 +20,6 @@
     text-align: left; /* Texte aligné à gauche */
     margin-bottom: 20px; /* Espacement avec les cartes */
 }
-
 
 .custom-card {
     width: 250px;

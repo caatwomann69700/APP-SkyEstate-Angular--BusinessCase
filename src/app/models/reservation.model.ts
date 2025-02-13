@@ -9,5 +9,5 @@ export interface IReservation {
     createdAt: string; // Date au format ISO
     updatedAt: string; // Date au format ISO
     annonce: string;   // URL de l'annonce associée, ex: "/api/annonces/1"
-  }
-  
+    
+}

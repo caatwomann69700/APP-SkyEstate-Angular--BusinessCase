@@ -17,7 +17,7 @@ export class LoginComponent {
   loginAttempts: number = 0;
   isLocked: boolean = false;
   maxAttempts: number = 3;
-  lockTime: number = 30 * 1000; // 30 secondes de blocage
+  lockTime: number = 30 * 1000; 
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -27,7 +27,7 @@ export class LoginComponent {
 
   onLogin(): void {
     if (this.isLocked) {
-      return; // Empêche toute tentative si l'utilisateur est bloqué
+      return; 
     }
 
     this.authService.login(this.credentials).subscribe({
@@ -43,7 +43,7 @@ export class LoginComponent {
           this.router.navigate(['/user-dashboard']);
         }
 
-        this.resetAttempts(); // Réinitialise les tentatives en cas de succès
+        this.resetAttempts(); 
       },
       error: () => {
         this.loginAttempts++;

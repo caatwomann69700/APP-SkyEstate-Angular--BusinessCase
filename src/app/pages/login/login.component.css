@@ -12,6 +12,26 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet moderne */
   }
   
+  .alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050; /* Plus grand que la navbar */
+    width: 80%; /* Ajuste selon tes besoins */
+    max-width: 500px; /* Pour éviter qu'il soit trop large */
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .alert-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
   /* Labels du formulaire */
   .login-form label {
     display: block;

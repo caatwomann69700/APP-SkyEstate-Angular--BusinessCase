@@ -38,7 +38,7 @@ h3 {
 .commodities-container {
   display: flex;
   flex-wrap: wrap; /* Permet de s’adapter aux petits écrans */
-  gap: 10px; /* Ajuste l'espacement entre les éléments */
+  gap: 100px; /* Ajuste l'espacement entre les éléments */
 }
 
 /* 📌 Style de la liste des commodités */
@@ -297,3 +297,47 @@ div[ng-reflect-ng-if="true"] p {
 }
 
 
+/* Style pour le conteneur de l'information de l'hôte */
+.host-info-container {
+  background-color: #F4F5F5;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Assure une bonne réactivité sur les petits écrans */
+}
+
+.host-image {
+  width: 80px; /* Vous pouvez ajuster cette taille comme vous le souhaitez */
+  height: 80px;
+  border-radius: 50%;
+}
+
+.host-info h6, .host-info p {
+  font-size: 12px; /* Taille de départ, ajustable selon vos besoins */
+}
+
+.host-name, .host-response-rate, .host-reply-time {
+  font-weight: bold;
+  font-size: 12px; /* Taille ajustable */
+}
+
+.message-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px; /* Taille ajustable */
+}
+
+/* Ajoutez des media queries si nécessaire pour ajuster les tailles sur les appareils mobiles */
+@media (max-width: 768px) {
+  .host-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .message-button {
+    width: 100%; /* Pleine largeur sur les petits écrans */
+  }
+}

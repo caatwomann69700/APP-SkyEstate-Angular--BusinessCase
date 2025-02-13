@@ -1,0 +1,173 @@
+* {
+    font-family: Arial, sans-serif;
+    color: #333; /* Couleur du titre */
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1150px;
+    margin: auto;
+    margin-bottom: 80px; /* Ajoute un espace sous la section */
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative; /* Ajoute cette ligne pour que le carré soit bien positionné */
+}
+
+.custom-square {
+    position: absolute; /* Positionnement absolu par rapport à .right */
+    width: 340px; /* Largeur */
+    height: 170px; /* Hauteur */
+    background-color: #f8f9fa;/* Couleur grise */
+    bottom: 120px; /* Distance du bas */
+    left: 330px;
+    z-index: -1;
+}
+
+
+  .left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333; 
+  }
+
+  p {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  button {
+    background-color: #2076C5;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+  .right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .image-container {
+    background: white;
+    padding: 10px;
+    display: inline-block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  img {
+    width: 400px;
+    height: 200px;
+    align-self: flex-end;
+  }
+
+  /* 📌 Responsive pour les tablettes (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Empile les éléments en colonne */
+        align-items: center;
+        text-align: center;
+    }
+
+    .left, .right {
+        width: 100%; /* Prend toute la largeur */
+        justify-content: center;
+    }
+
+    .custom-square {
+        display: none; /* Cache le carré */
+    }
+
+    .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        width: 80%; /* Ajuste la taille de l'image */
+        height: auto;
+    }
+}
+
+/* 📌 Responsive pour les mobiles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Met en colonne */
+        align-items: left;
+        text-align: left;
+        margin-bottom: 50px; /* Ajuste l’espace sous la section */
+    }
+
+    .left {
+        width: 90%; /* Réduit la largeur du texte */
+        text-align: left;
+    }
+
+    .right {
+        width: 100%;
+        justify-content: center;
+        margin-top: 20px; /* Ajoute de l’espace entre le texte et l’image */
+    }
+
+    .custom-square {
+        display: none; /* Cache le carré en mobile */
+    }
+
+    .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        width: 100%; /* L'image prend toute la largeur */
+        height: auto;
+    }
+
+    button {
+        width: 100%; /* Le bouton prend toute la largeur */
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+/* 📌 Responsive pour les petits écrans (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .container {
+        margin-bottom: 40px; /* Réduit encore l’espace sous la section */
+    }
+
+    .left {
+        width: 95%; /* Texte encore plus centré */
+    }
+
+    .right {
+        margin-top: 15px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

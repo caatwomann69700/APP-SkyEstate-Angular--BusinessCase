@@ -14,8 +14,7 @@ import { CommonModule } from '@angular/common';
 export class CategorySectionComponent implements OnInit {
   categories: ICategory[] = [];
   environment = environment;
-  urlImage = `${environment.apiBaseUrl}/uploads/`; // URL pour récupérer les images
-
+  urlImage = `${environment.apiBaseUrl}/uploads/`; 
   constructor(private CategoryService: CategoryService) {}
 
   ngOnInit(): void {

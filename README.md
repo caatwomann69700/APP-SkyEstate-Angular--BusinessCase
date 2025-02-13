@@ -179,7 +179,17 @@ ng add @angular/material
     MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
-    ````
+````
+## Admin 
+
+### generer les composants suivants : 
+````
+ng generate component pages/admin/admin-annonces
+ng generate component pages/admin/admin-amenities
+ng generate component pages/admin/admin-categories
+ng generate component pages/admin/admin-reservations
+ng generate component pages/admin/admin-utilisateurs
+````
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
