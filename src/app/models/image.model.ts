@@ -8,8 +8,6 @@ export interface IImage {
   "@type": string;
   id: number;
   name: string;
-
-
   annonce: IAnnonce ;
   category: ICategory ;
   amenity: IAmenity ;

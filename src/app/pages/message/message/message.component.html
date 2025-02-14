@@ -1,0 +1,58 @@
+<div class="chat-container">
+    <!-- Partie Gauche : Liste des conversations -->
+    <div class="conversations-list">
+        <h3>Messages</h3>
+        <ul>
+            <li *ngFor="let user of conversations"
+                (click)="selectUser(user)"
+                [class.selected]="selectedUser?.id === user.id">
+                <img [src]="getUserImage(user)" alt="Avatar" class="user-avatar" />
+
+                <div class="user-info">
+                    <div class="user-name">{{ user.firstname }} {{ user.lastname }}</div>
+                    <div class="last-message">
+                        
+                        
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Partie Droite : Fenêtre de discussion -->
+    <div class="chat-window" *ngIf="selectedUser">
+        <div class="chat-header">
+            <h3>{{ selectedUser.firstname }} {{ selectedUser.lastname }}</h3>
+
+        </div>
+
+        <div class="chat-messages" #chatBox>
+            <div *ngFor="let msg of messages" class="message"
+     [ngClass]="msg.sender?.id === currentUser?.id ? 'sent' : 'received'">
+
+    <img [src]="msg.sender?.image || 'assets/default-avatar.png'" alt="Avatar" class="message-avatar" />
+
+    <div class="message-content">
+        <div class="message-info">
+            <strong>{{ msg.sender?.firstname }} {{ msg.sender?.lastname }}</strong>
+            <span class="timestamp">{{ msg.createdAt | date:'shortTime' }}</span> 
+        </div>
+        <p>{{ msg.content }}</p>
+    </div>
+</div>
+
+       
+       
+        </div>
+
+        <!-- Barre de saisie fixe -->
+        <div class="message-input">
+            <button class="icon-button">
+                <img src="assets/Icones/icons8-picture-32.png" alt="Envoyer une image" />
+            </button>
+            <input type="text" [(ngModel)]="newMessage" placeholder="Écrire un message..." />
+            <button class="send-button" (click)="sendMessage()">Envoyer</button>
+
+        </div>
+    </div>
+</div>

@@ -1,3 +1,5 @@
+import { IImage } from "./image.model";
+
 export interface IUser {
     id?: number; 
     email: string;
@@ -13,4 +15,5 @@ export interface IUser {
     country?: string;
     createdAt?: string; 
     updatedAt?: string; 
+    image?: IImage | null;
   }

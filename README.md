@@ -190,6 +190,13 @@ ng generate component pages/admin/admin-categories
 ng generate component pages/admin/admin-reservations
 ng generate component pages/admin/admin-utilisateurs
 ````
+
+## Messagerie instantannée 
+creer une interface Message 
+ensuite creer un service message 
+ng generate service services/message
+ensuite creer une page message  
+ng generate component pages/message/message
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

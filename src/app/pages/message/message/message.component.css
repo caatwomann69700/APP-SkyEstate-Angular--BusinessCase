@@ -1,0 +1,263 @@
+/* ✅ CONTAINER PRINCIPAL */
+.chat-container {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    height: 80vh;
+    margin: 170px auto;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    background: white;
+}
+
+/* ✅ LISTE DES CONVERSATIONS (Côté gauche) */
+.conversations-list {
+    width: 30%;
+    background-color: #F4F5F5;
+    padding: 10px;
+    border-right: 2px solid #ccc;
+    overflow-y: auto;
+}
+
+.conversations-list h3 {
+    text-align: left;
+    padding: 10px;
+    color: #2076C5;
+}
+
+.conversations-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.conversations-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-bottom: 1px solid #ddd;
+}
+
+.conversations-list li.selected,
+.conversations-list li:hover {
+    background-color: white;
+}
+
+.conversations-list img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.last-message {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: gray;
+}
+
+.timestamp {
+    font-size: 10px;
+    color: gray;
+}
+
+/* ✅ CHAT WINDOW (Côté droit) */
+.chat-window {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+/* ✅ HEADER DU CHAT */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* ✅ MESSAGES */
+.chat-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f4f4f4;
+}
+
+/* ✅ STYLE DES MESSAGES */
+.message {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.message-content {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #F4F5F5;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ✅ Distinction entre les messages */
+/* ✅ Message envoyé (aligné à droite, fond BLEU) */
+.sent {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.sent .message-content {
+    background-color: #d1e7ff;  /* 🔹 Bleu clair */
+    align-self: flex-end;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* ✅ Message reçu (aligné à gauche, fond GRIS) */
+.received {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.received .message-content {
+    background-color: #f4f4f4;  /* 🔹 Gris clair */
+    align-self: flex-start;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+
+/* ✅ CHAMP DE MESSAGE */
+.message-input {
+    display: flex;
+    padding: 10px;
+    border-top: 2px solid #ccc;
+    background: white;
+    align-items: center;
+}
+
+.message-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.icon-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.send-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background: #2076C5;
+}
+.send-button {
+    background: #2076C5; /* Bleu */
+    color: white; /* Texte blanc */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    text-align: left;
+}
+
+.send-button:hover {
+    background: #0056b3; /* Bleu foncé au survol */
+}
+
+
+/* ✅ Scrollbar pour Webkit (Chrome, Edge, Safari) */
+.chat-messages::-webkit-scrollbar {
+    width: 8px; /* Épaisseur */
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: white; /* Fond blanc */
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #2076C5; /* Bleu */
+    border-radius: 4px;
+    border: 2px solid white; /* Bordure blanche */
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* Bleu foncé au survol */
+}
+
+/* ✅ Scrollbar pour Firefox */
+.chat-messages {
+    scrollbar-width: thin;
+    scrollbar-color: #2076C5 white;
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .chat-container {
+        flex-direction: column;
+        width: 100%;
+        
+        height: 100vh;
+        margin: 150px ;
+    }
+
+    .conversations-list {
+        width: 100%;
+        height: 30%;
+        border-right: none;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .chat-window {
+        width: 100%;
+        height: 70%;
+    }
+}

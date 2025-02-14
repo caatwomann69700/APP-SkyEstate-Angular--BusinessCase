@@ -10,6 +10,7 @@ import { FonctionnementComponent } from './components/fonctionnement/fonctionnem
 import { AnnoncesPageComponent } from './pages/annonces-page/annonces-page.component';
 import { AnnonceDetailComponent } from './pages/annonce-detail/annonce-detail.component';
 import { FilteredAnnoncesComponent } from './pages/filtered-annonces/filtered-annonces.component';
+import { MessageComponent } from './pages/message/message/message.component';
 
 
 
@@ -19,6 +20,7 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'find-housing', component: AnnoncesPageComponent },
     { path: 'annonce/:id', component: AnnonceDetailComponent },
+    { path: 'messages', component: MessageComponent},
     { path: 'filtered-annonces', component: FilteredAnnoncesComponent },
     { path: 'login', component: LoginComponent },
     { path: 'mentions-legales', component: LegalMentionsComponent },
