@@ -1,3 +1,6 @@
+<!-- Afficher la navbar seulement si l'utilisateur n'est pas un admin -->
+<nav *ngIf="!isAdmin()" class="navbar navbar-expand-lg bg-light">
+  
 <!-- Pre-Navbar -->
 
 <div class="pre-navbar">
@@ -70,10 +73,16 @@
             Contact
           </a>
         </li>
+        <li *ngIf="isUserLoggedIn()" class="nav-item">
+          <a 
+            routerLink="user-dashboard/my-ads" 
+            routerLinkActive="active"
+            class="nav-link">Mes annonces
+          </a>
+        </li>  
       </ul>
-    
-
-
+     
+      
       <!-- Boutons pour les non-connectés -->
       <ul *ngIf="!isLoggedIn()" class="navbar-nav ms-auto align-items-center">
         <li class="nav-item me-3">
@@ -113,3 +122,5 @@
     </div>
   </div>
 </nav>
+<!-- Bouton de déconnexion affiché même si l'admin est connecté -->
+

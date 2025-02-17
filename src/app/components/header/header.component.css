@@ -6,23 +6,23 @@ body {
   }
   
   header {
-    background-color: #f8f9fa; /* Gris très clair */
+    background-color: #f8f9fa; 
     padding: 90px 0px 0px 0px;
     
   }
   
-  /* Bouton bleu sans coins arrondis */
+
   .btn-blue {
-    background-color: #2076C5; /* Couleur personnalisable */
-    color: #ffffff; /* Texte blanc */
-    border: none; /* Pas de bordure */
-    border-radius: 0; /* Suppression des coins arrondis */
-    padding: 0.6rem 1.2rem; /* Ajustement de la taille du bouton */
-    font-size: 1rem; /* Taille du texte */
-    font-weight: bold; /* Texte en gras */
-    line-height: 1.5; /* Alignement du texte */
-    cursor: pointer; /* Curseur pointeur */
-    transition: background-color 0.3s ease; /* Effet hover */
+    background-color: #2076C5; 
+    color: #ffffff;
+    border: none; 
+    border-radius: 0; 
+    padding: 0.6rem 1.2rem; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    line-height: 1.5; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
   }
   
   #dynamic-city {
@@ -34,14 +34,14 @@ body {
   }
   
   .btn-blue:hover {
-    background-color: #0056b3; /* Couleur plus foncée */
+    background-color: #0056b3; 
   }
   
   .text-purple {
     color: #2076C5;
   }
   .hero-image {
-    padding-left: 40px; /* Ajustez cette valeur pour décaler l'image */
+    padding-left: 40px;
   }
   
   /* Section Hero */
@@ -78,91 +78,91 @@ body {
   
   /* Barre de recherche */
   .search-box .row.g-0 > [class*='col-'] {
-    padding-left: 0; /* Supprime l'espacement à gauche */
-    padding-right: 0; /* Supprime l'espacement à droite */
+    padding-left: 0; 
+    padding-right: 0;
   }
   
   /* Champ Ville */
   .ville-field {
-    background-color: #2076C5; /* Bleu très clair */
-    color: #ffffff; /* Texte blanc */
-    border: none; /* Pas de bordure */
-    border-radius: 0; /* Supprime les coins arrondis pour un alignement parfait */
-    padding: 0.8rem; /* Espacement interne */
+    background-color: #2076C5; 
+    color: #ffffff;
+    border: none; 
+    border-radius: 0; 
+    padding: 0.8rem; 
   }
   
   .ville-field::placeholder {
-    color: #ffffff; /* Texte de l'espace réservé (placeholder) blanc */
+    color: #ffffff; 
   }
   
   .arrivee-field,
   .depart-field {
-    background-color: #d3d3d3; /* Gris foncé */
-    color: #000000; /* Texte noir */
+    background-color: #d3d3d3; 
+    color: #000000; 
     border: none;
-    border-radius: 0; /* Supprime les coins arrondis */
+    border-radius: 0; 
     padding: 0.8rem;
   }
   
   .arrivee-field::placeholder,
   .depart-field::placeholder {
-    color: #000000; /* Texte de l'espace réservé noir */
+    color: #000000;
   }
   
   /* Carré Blanc */
   .white-box {
-    background-color: #ffffff; /* Fond blanc */
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    padding: 1.5rem; /* Espacement interne */
-    margin-top: 1rem; /* Espacement au-dessus du carré blanc */
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem; 
+    margin-top: 1rem; 
   }
   
   /* Carré Gris */
   .grey-box {
-    background-color: rgba(230, 232, 232, 0.65); /* Gris */
+    background-color: rgba(230, 232, 232, 0.65); 
     padding: 1rem;
-    width: 45%; /* Largeur ajustable */
+    width: 45%; 
     text-align: center;
   }
   
   .separator {
     width: 1px;
     height: 100%;
-    background-color: #000000; /* Noir */
+    background-color: #000000;
   }
   
   /* Bouton Chercher */
   .btn-custom {
-    background-color: #2076C5; /* Couleur personnalisable */
-    color: #ffffff; /* Texte blanc */
+    background-color: #2076C5; 
+    color: #ffffff;
     border: none;
-    padding: 0.8rem 2rem; /* Ajuste l'espacement */
-    font-size: 1rem; /* Taille du texte */
+    padding: 0.8rem 2rem; 
+    font-size: 1rem; 
     font-weight: bold;
-    transition: all 0.3s ease-in-out; /* Transition pour hover */
+    transition: all 0.3s ease-in-out; 
   }
   
   .btn-custom:hover {
-    background-color: #2076C5; /* Couleur plus foncée au survol */
+    background-color: #2076C5; 
   }
   
   /* Responsivité */
   @media (max-width: 768px) {
     .grey-box {
-      width: 100%; /* Largeur totale sur mobile */
-      margin-bottom: 1rem; /* Espacement entre les boîtes */
+      width: 100%; 
+      margin-bottom: 1rem; 
     }
   
     .separator {
-      display: none; /* Supprime le séparateur sur mobile */
+      display: none; 
     }
   }
   
   /* Style pour la case "Relations par jour" */
   .stat-relations {
-    background-color: rgba(230, 232, 232, 0.65); /* Jaune clair */
-    color: #333; /* Texte sombre pour contraste */
+    background-color: rgba(230, 232, 232, 0.65); 
+    color: #333; 
     padding: 1.5rem;
     width: 230px;
     height: 120px;
@@ -171,8 +171,8 @@ body {
   
   /* Style pour la case "1 location/10 minutes" */
   .stat-locations {
-    background-color: rgba(32, 118, 197, 0.2); /* Vert clair */
-    color: #fff; /* Texte blanc pour contraste */
+    background-color: rgba(32, 118, 197, 0.2); 
+    color: #fff; 
     padding: 1.5rem;
     width: 230px;
     height: 120px;
@@ -182,8 +182,8 @@ body {
   
   /* Style pour la case "Utilisateurs" */
   .stat-users {
-    background-color:white; /* Violet clair */
-    color: #fff; /* Texte blanc pour contraste */
+    background-color:white; 
+    color: #fff; 
     padding: 1.5rem;
     width: 230px;
     height: 120px;
@@ -259,8 +259,13 @@ body {
   
     /* Masquer la section des statistiques */
     .stats-section {
-      display: none; /* Cache complètement la section */
+      display: none; 
     }
   }
+  }
+  @media (max-width: 768px) {
+    .hero-image {
+      display: none;
+    }
   }
   

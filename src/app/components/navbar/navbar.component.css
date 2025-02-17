@@ -6,50 +6,50 @@ body {
 }  
 
 header {
-  background-color: #f8f9fa; /* Gris très clair */
+  background-color: #f8f9fa; 
 }
 
 
 
 /* Pre-navbar styles */
 .pre-navbar {
-  background-color: #2076C5; /* Bleu foncé */
+  background-color: #2076C5; 
   color: white;
   text-align: center;
   font-weight: bold;
-  position: fixed; /* Fixée en haut */
+  position: fixed; 
   top: 0;
   left: 0;
-  width: 100%; /* Occupe toute la largeur */
-  z-index: 999; /* Au-dessus des autres éléments */
-  height: 40px; /* Hauteur de la pre-navbar */
-  line-height: 40px; /* Alignement vertical du texte */
-  margin: 0; /* Aucune marge */
-  padding: 0; /* Aucun padding */
+  width: 100%; 
+  z-index: 999; 
+  height: 40px; 
+  line-height: 40px; 
+  margin: 0; 
+  padding: 0; 
 }
 
 /* Style pour le texte "The Cohort" */
 .navbar-brand .ms-2 {
-  font-size: 1.5rem; /* Taille du texte pour qu'il soit grand */
-  font-weight: bold; /* Texte en gras */
-  color: #000000; /* Couleur noire par défaut */
-  letter-spacing: 0.05em; /* Espacement entre les lettres */
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  color: #000000;
+  letter-spacing: 0.05em; 
 }
 
 /* Navbar styles */
 .navbar {
-  background-color: #f8f9fa; /* Couleur de fond de la navbar */
-  position: fixed; /* Fixée en haut sous la pre-navbar */
-  top: 38px; /* Ajuste la position pour qu'elle soit juste sous la pre-navbar */
+  background-color: #f8f9fa; 
+  position: fixed;
+  top: 38px; 
   left: 0;
-  width: 100%; /* Largeur de la navbar */
-  z-index: 998; /* En dessous de la pre-navbar */
-  margin: 0; /* Supprime toute marge externe */
-  padding: 20px 0px 20px 0px; /* Supprime tout padding interne */
+  width: 100%;
+  z-index: 998;
+  margin: 0;
+  padding: 20px 0px 20px 0px;
 }
 
 
-/* Cacher l'icône par défaut du menu hamburger */
+
 
 /* Supprime les bordures au clic (focus) sur le menu toggler */
 .navbar-toggler:focus {
@@ -76,7 +76,7 @@ header {
 .navbar-nav .nav-link {
   margin: 0; /* Supprime toute marge */
   padding: 0.5rem 1rem; /* Ajuste l'espacement interne */
-  font-size: 1rem; /* Taille du texte */
+  font-size: 1rem; 
   text-align: left; /* Centre le texte */
 }
 
@@ -84,7 +84,7 @@ header {
 .btn-blue {
   margin: 0; /* Supprime toute marge */
   padding: 0.5rem 1rem; /* Ajuste l'espacement interne */
-  font-size: 1rem; /* Taille du texte */
+  font-size: 1rem; 
   line-height: 1.5; /* Alignement vertical */
 }
 
@@ -124,10 +124,10 @@ header {
   border: none; /* Pas de bordure */
   border-radius: 0; /* Suppression des coins arrondis */
   padding: 0.6rem 1.2rem; /* Ajustement de la taille du bouton */
-  font-size: 1rem; /* Taille du texte */
-  font-weight: bold; /* Texte en gras */
+  font-size: 1rem; 
+  font-weight: bold; 
   line-height: 1.5; /* Alignement du texte */
-  cursor: pointer; /* Curseur pointeur */
+  cursor: pointer; 
   transition: background-color 0.3s ease; /* Effet hover */
 }
 
@@ -194,7 +194,7 @@ header {
   color: #ffffff; /* Texte blanc */
   border: none; /* Pas de bordure */
   border-radius: 0; /* Supprime les coins arrondis pour un alignement parfait */
-  padding: 0.8rem; /* Espacement interne */
+  padding: 0.8rem; 
 }
 
 .ville-field::placeholder {
@@ -221,7 +221,7 @@ header {
   background-color: #ffffff; /* Fond blanc */
   border-radius: 10px; /* Coins arrondis */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
-  padding: 1.5rem; /* Espacement interne */
+  padding: 1.5rem; 
   margin-top: 1rem; /* Espacement au-dessus du carré blanc */
 }
 
@@ -247,14 +247,14 @@ header {
   color: #ffffff; /* Texte blanc */
   border: none;
   padding: 0.8rem 2rem; /* Ajuste l'espacement */
-  font-size: 1rem; /* Taille du texte */
+  font-size: 1rem; 
   font-weight: bold;
   
   transition: all 0.3s ease-in-out; /* Transition pour hover */
 }
 
 .btn-custom:hover {
-  background-color: #2076C5; /* Couleur plus foncée au survol */
+  background-color: #2076C5; 
  
 }
 
@@ -266,44 +266,44 @@ header {
   }
 
   .separator {
-      display: none; /* Supprime le séparateur sur mobile */
+      display: none; 
   }
 }
 
 .highlighte-stat { 
-  background-color: #ffffff4f; /* Bleu personnalisé */
-  color: #ffffff; /* Texte blanc pour contraste */
+  background-color: #ffffff4f; 
+  color: #ffffff; 
  
-  padding: 1rem; /* Espacement interne */
+  padding: 1rem; 
 
 }
 .highlighte-stat .stat-value {
-  font-size: 1.8rem; /* Taille de la valeur */
+  font-size: 1.8rem; 
   font-weight: bold;
 }
 /* Style pour la statistique avec fond bleu */
 .highlighted-stat {
-  background-color: #2075c54f; /* Bleu personnalisé */
-  color: #ffffff; /* Texte blanc pour contraste */
+  background-color: #2075c54f; 
+  color: #ffffff; 
  
-  padding: 1rem; /* Espacement interne */
+  padding: 1rem; 
 }
 
 .highlighte-stat .stat-label {
-  font-size: 1rem; /* Taille de la description */
-  margin-top: 0.5rem; /* Espacement entre valeur et description */
+  font-size: 1rem; 
+  margin-top: 0.5rem; 
 }
 
 
 /* Ajuste la taille du texte pour qu'il reste lisible */
 .highlighted-stat .stat-value {
-  font-size: 1.8rem; /* Taille de la valeur */
+  font-size: 1.8rem; 
   font-weight: bold;
 }
 
 .highlighted-stat .stat-label {
-  font-size: 1rem; /* Taille de la description */
-  margin-top: 0.5rem; /* Espacement entre valeur et description */
+  font-size: 1rem; 
+  margin-top: 0.5rem; 
 }
 
 .stat-value {
@@ -317,15 +317,15 @@ header {
 }
 @media (max-width: 768px) {
   .stats-section {
-      text-align: center; /* Centre les stats sur mobile */
+      text-align: center; 
   }
 
   .stat-value {
-      font-size: 1.2rem; /* Taille réduite sur mobile */
+      font-size: 1.2rem; 
   }
 
   .stat-label {
-      font-size: 0.8rem; /* Taille réduite sur mobile */
+      font-size: 0.8rem; 
   }
 }
 
@@ -375,41 +375,40 @@ header {
 
 /* Lien Mon Compte */
 .nav-link.text-blue {
-  text-decoration: none; /* Supprime le soulignement */
-  font-size: 1rem; /* Taille du texte */
-  color: #2076C5; /* Couleur bleue */
-  margin-right: 15px; /* Espacement entre les liens */
-  font-weight: normal; /* Texte normal (pas en gras) */
+  text-decoration: none;
+  font-size: 1rem; 
+  color: #2076C5; 
+  margin-right: 15px; 
+  font-weight: normal; 
 }
 
 .nav-link.text-blue:hover {
-  text-decoration: none; /* Pas de soulignement au survol */
-  color: #0056b3; /* Couleur bleue plus foncée au survol */
+  text-decoration: none; 
+  color: #0056b3; 
 }
 
 /* Bouton Déconnexion */
 .btn-blue {
-  background-color: #2076C5; /* Couleur bleue */
-  color: white; /* Texte blanc */
-  border: none; /* Supprime la bordure */
-  border-radius: 0; /* Pas de coins arrondis */
-  padding: 0.5rem 1rem; /* Espacement interne */
-  font-size: 1rem; /* Taille du texte */
-  font-weight: bold; /* Texte normal (pas en gras) */
-  cursor: pointer; /* Curseur pointeur */
-  transition: background-color 0.3s ease; /* Animation au survol */
+  background-color: #2076C5; 
+  color: white; 
+  border: none; 
+  border-radius: 0; 
+  padding: 0.5rem 1rem; 
+  font-size: 1rem; 
+  font-weight: bold; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
 }
 
 .btn-blue:hover {
-  background-color: #0056b3; /* Couleur plus foncée au survol */
+  background-color: #0056b3; 
 }
 
 /* Style pour l'élément actif */
 .nav-link.active {
-  color: #2076C5 !important; /* Couleur bleue plus foncée */
-  font-weight: bold; /* Texte en gras */
-  text-decoration: underline; /* Soulignement pour l'élément actif */
+  color: #2076C5 !important; 
+  font-weight: bold; 
+  text-decoration: underline; 
 }
 
-/* Optionnel : Si vous voulez un fond pour l'élément actif */
 

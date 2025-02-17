@@ -80,7 +80,9 @@ isUser(): boolean {
   return this.authService.isUser();
 }
 
-
+isUserLoggedIn(): boolean {
+  return this.isLoggedIn() && this.isUser();
+}
 
 logout(): void {
   this.authService.logout();

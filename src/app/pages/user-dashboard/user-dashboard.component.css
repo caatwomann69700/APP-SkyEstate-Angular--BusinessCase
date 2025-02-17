@@ -10,15 +10,17 @@ body {
 
 .container {
   max-width: 800px;
-  margin: 100px auto 0; 
+  margin: 150px auto 0; 
   padding: 30px;
   background-color: #f8f9fa;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  text-align: center;
+  text-align: left;
   color: #333;
+  margin: 0px 0px 20px 0px; 
+  font-size: 28px;
 }
 
 .register-form label {

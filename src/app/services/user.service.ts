@@ -10,8 +10,7 @@ import { environment } from '../../environements/environement';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = environment.apiBaseUrl; // Garde une seule déclaration
-// ✅ Vérifier l'URL
+  private apiUrl = environment.apiBaseUrl; 
  
   constructor(private http: HttpClient, private authService: AuthService) {}
 
@@ -70,4 +69,38 @@ export class UserService {
 
     return this.http.delete<void>(`${this.apiUrl}/users/${userId}`, { headers });
   }
+
+  getUserById(userId: number): Observable<IUser> {
+    const token = this.authService.getToken();
+  
+    if (!token) {
+      console.error("❌ Erreur : Aucun token trouvé !");
+      return throwError(() => new Error("⚠️ Utilisateur non authentifié"));
+    }
+  
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    });
+  
+    return this.http.get<IUser>(`${this.apiUrl}/users/${userId}`, { headers });
+  }
+  
+
+  getUserByUrl(userUrl: string): Observable<IUser> {
+    const token = this.authService.getToken();
+  
+    if (!token) {
+      console.error("❌ Erreur : Aucun token trouvé !");
+      return throwError(() => new Error("⚠️ Utilisateur non authentifié"));
+    }
+  
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    });
+  
+    return this.http.get<IUser>(`${environment.apiBaseUrl}/users/me`, { headers });
+  }
+  
 }

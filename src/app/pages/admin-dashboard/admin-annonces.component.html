@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Gestion des Annonces</h2>
+    <button class="btn btn-primary mb-3">Ajouter une annonce</button>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Titre</th>
+          <th>Ville</th>
+          <th>Prix</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let annonce of annonces">
+          <td>{{ annonce.title }}</td>
+          <td>{{ annonce.city }}</td>
+          <td>{{ annonce.price }}€</td>
+          <td>
+            <button class="btn btn-warning btn-sm">Modifier</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteAnnonce(annonce.id)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

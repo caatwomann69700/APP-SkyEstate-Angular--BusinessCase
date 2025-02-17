@@ -19,14 +19,15 @@ import { AccessibilityPanelComponent } from './accessibility-panel/accessibility
     NavbarComponent,
     FooterComponent,
     SplashScreenComponent, NgbModule, AccessibilityPanelComponent
-    
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
-  ],  // Correction : "styleUrls" au lieu de "styleUrl"
+  ], 
 })
 export class AppComponent {
   title = 'colivio-frontend';
+
+  
 }

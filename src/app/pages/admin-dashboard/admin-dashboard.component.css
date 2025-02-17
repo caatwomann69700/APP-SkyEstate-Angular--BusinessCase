@@ -1,42 +1,94 @@
-.admin-dashboard {
-    display: flex;
-    height: 100vh;
-  }
+/* Barre du haut */
+.top-bar {
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid #2076C5;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 40px;
+}
+
+.logout-btn {
+  background-color: #2076C5;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #105a99;
+}
+
+/* Petite barre bleue */
+.menu-bar {
+  width: 100%;
+  background-color: white;
+  color: #2076C5;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #2076C5;
+  position: fixed;
+  left: -250px;
+  top: 78px;
+  padding-top: 20px;
+  transition: left 0.3s ease-in-out;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-menu .nav-item {
+  margin-bottom: 20px;
+}
+
+.sidebar .nav-link {
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  display: block;
+  border-radius: 0px;
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.384);
+}
+
+/* Ajustement du contenu */
+.content {
   
-  .sidebar {
-    width: 300px;
-    background: #f8f9fa;
-    color: white;
-    padding: 15px;
-    position: fixed;
-    height: 100%;
-    top: 100px; 
-    left: 0;
-  }
+  flex-grow: 1;
+  padding: 10px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.content.expanded {
+  margin-left: 240px;
   
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    padding: 60px 0px 0px 100px;
-  }
-  
-  .sidebar ul li a {
-    color: #333;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .sidebar ul li a:hover, .sidebar ul li a.active {
-    background: #2076C5;
-    padding-left: 10px;
-  }
-  
-  .content {
-    margin-left: 250px;
-    padding: 20px;
-    width: calc(100% - 250px);
-  }
-  
+}
+
+h2 { 
+  color: #2076C5;
+}
+
+.admin-name {
+  color: #2076C5;
+  font-weight: bold;
+}

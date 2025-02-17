@@ -1,0 +1,48 @@
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<h1>coucou </h1>
+<div class="container">
+    <h2 class="text-center my-4">Mes Annonces</h2>
+  
+    <!-- Affichage du message de chargement -->
+    <div *ngIf="isLoading" class="text-center">
+      <p>Chargement en cours...</p>
+    </div>
+  
+    <!-- Affichage des erreurs -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Affichage des annonces -->
+    <div *ngIf="!isLoading && annonces.length === 0" class="text-center">
+      <p>Vous n'avez pas encore publié d'annonces.</p>
+    </div>
+  
+    <div class="row">
+      <div *ngFor="let annonce of annonces" class="col-md-4">
+        <div class="card my-3">
+          <img [src]="annonce.imageUrl || 'assets/images/default-image.jpg'" class="card-img-top" alt="Image annonce">
+          <div class="card-body">
+            <h5 class="card-title">{{ annonce.title }}</h5>
+            <p class="card-text">{{ annonce.description }}</p>
+            <p><strong>Prix :</strong> {{ annonce.price }} €</p>
+            <p><strong>Ville :</strong> {{ annonce.city }}</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

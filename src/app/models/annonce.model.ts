@@ -19,6 +19,6 @@ export interface IAnnonce {
   amenities: string[];
   imagesList?: IImageList[];
   imageUrl?: string; 
-  user: IUser;
+  user: IUser | string;
 }
 

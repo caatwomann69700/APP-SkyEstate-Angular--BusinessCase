@@ -1,18 +1,40 @@
+<!-- Dashboard Admin Professionnel -->
 <div class="admin-dashboard">
-    <!-- ✅ Sidebar -->
-    <nav class="sidebar">
-      <ul>
-        <li><a routerLink="annonces" routerLinkActive="active">📌 Annonces</a></li>
-        <li><a routerLink="categories" routerLinkActive="active">📂 Catégories</a></li>
-        <li><a routerLink="amenities" routerLinkActive="active">🏡 Équipements</a></li>
-        <li><a routerLink="reservations" routerLinkActive="active">📅 Réservations</a></li>
-        <li><a routerLink="utilisateurs" routerLinkActive="active">👤 Utilisateurs</a></li>
-      </ul>
-    </nav>
-  
-    <!-- ✅ Contenu Dynamique -->
-    <div class="content">
-     
+  <!-- Barre du haut -->
+  <header class="top-bar">
+    <div class="container-fluid d-flex justify-content-between p-3">
+      <img src="assets/images/logo.png" alt="Logo" class="logo">
+      <h2 class="fw-bold">Admin Dashboard</h2>
+      <button (click)="logout()" class="btn logout-btn">Déconnexion</button>
+    </div>
+  </header>
+
+  <!-- Petite barre bleue avec icône de menu -->
+  <div class="menu-bar">
+    <div class="container-fluid d-flex align-items-left p-2">
+      <img src="assets/Icones/icons8-menu-50.png" alt="Menu" class="menu-icon" (click)="toggleSidebar()">
     </div>
   </div>
-  
+
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <nav class="sidebar" [class.open]="isSidebarOpen">
+      <ul class="nav flex-column p-3 sidebar-menu">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin-dashboard"> Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin-dashboard/annonces">Gérer les Annonces</a>
+        </li>
+        
+        
+      </ul>
+    </nav>
+    
+    <!-- Contenu Principal -->
+     <!-- Contenu Principal -->
+  <main class="content p-4" [class.expanded]="isSidebarOpen">
+    <h2 *ngIf="user">Bonjour,{{ user?.firstname }} {{ user?.lastname }}</h2>
+  </main>
+  </div>  
+</div>

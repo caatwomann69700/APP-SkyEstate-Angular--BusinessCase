@@ -11,6 +11,8 @@ import { AnnoncesPageComponent } from './pages/annonces-page/annonces-page.compo
 import { AnnonceDetailComponent } from './pages/annonce-detail/annonce-detail.component';
 import { FilteredAnnoncesComponent } from './pages/filtered-annonces/filtered-annonces.component';
 import { MessageComponent } from './pages/message/message/message.component';
+import { MyAdsComponent } from './pages/user-dashboard/my-ads/my-ads.component';
+import { AdminAnnoncesComponent } from './pages/admin-dashboard/admin-annonces.component';
 
 
 
@@ -25,7 +27,10 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'mentions-legales', component: LegalMentionsComponent },
     { path: 'fonctionnement', component: FonctionnementComponent },
+    { path: 'user-dashboard/my-ads', component: MyAdsComponent },
     { path: 'register', component: RegisterComponent }, 
+    { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
+    { path: 'admin-dashboard/annonces', component: AdminAnnoncesComponent, canActivate: [AuthGuard] },
     { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [AuthGuard] }, 
     { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
     { path: '**', redirectTo: '/login' }, 
